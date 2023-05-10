@@ -19,7 +19,8 @@ namespace DinosGimnasio
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-
+            FormMenu menu = new FormMenu();
+            menu.ShowDialog();
         }
     }
 }

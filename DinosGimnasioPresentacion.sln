@@ -5,6 +5,10 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinosGimnasio", "DinosGimnasio\DinosGimnasio.csproj", "{094CE3C2-AAC3-470A-96D0-8D2CBA0E8942}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{70D260A7-9F3D-41F6-9D46-08E576C4DCBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metodos", "Metodos\Metodos.csproj", "{5DB69C91-1FEB-4CEE-8862-97BA45BA1B98}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{094CE3C2-AAC3-470A-96D0-8D2CBA0E8942}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{094CE3C2-AAC3-470A-96D0-8D2CBA0E8942}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{094CE3C2-AAC3-470A-96D0-8D2CBA0E8942}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70D260A7-9F3D-41F6-9D46-08E576C4DCBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70D260A7-9F3D-41F6-9D46-08E576C4DCBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70D260A7-9F3D-41F6-9D46-08E576C4DCBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70D260A7-9F3D-41F6-9D46-08E576C4DCBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DB69C91-1FEB-4CEE-8862-97BA45BA1B98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DB69C91-1FEB-4CEE-8862-97BA45BA1B98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DB69C91-1FEB-4CEE-8862-97BA45BA1B98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DB69C91-1FEB-4CEE-8862-97BA45BA1B98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

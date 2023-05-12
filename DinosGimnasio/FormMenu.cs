@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DinosGimnasio
 {
-    public partial class FormMenu : Form
+    public partial class Registro : Form
     {
-        public FormMenu()
+        public Registro()
         {
             InitializeComponent();
         }

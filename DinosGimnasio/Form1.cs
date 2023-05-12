@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace DinosGimnasio
 {
-    public partial class Form1 : Form
+    public partial class MenuIngreso : Form
     {
-        public Form1()
+        public MenuIngreso()
         {
             InitializeComponent();
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            FormMenu menu = new FormMenu();
+            Registro menu = new Registro();
             menu.ShowDialog();
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace DinosGimnasio
 {
-    partial class Form1
+    partial class MenuIngreso
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -31,8 +31,8 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.BtnLogin = new System.Windows.Forms.Button();
             this.PanelMenu = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.PanelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,13 +63,6 @@
             this.PanelMenu.Size = new System.Drawing.Size(432, 308);
             this.PanelMenu.TabIndex = 1;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(113, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 21);
-            this.textBox2.TabIndex = 1;
-            // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(113, 150);
@@ -77,7 +70,14 @@
             this.textBox3.Size = new System.Drawing.Size(200, 21);
             this.textBox3.TabIndex = 2;
             // 
-            // Form1
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(113, 58);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(200, 21);
+            this.textBox2.TabIndex = 1;
+            // 
+            // MenuIngreso
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
@@ -86,9 +86,9 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.GrayText;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Form1";
+            this.Name = "MenuIngreso";
             this.Padding = new System.Windows.Forms.Padding(7);
-            this.Text = "Form1";
+            this.Text = "Menu Principal";
             this.PanelMenu.ResumeLayout(false);
             this.PanelMenu.PerformLayout();
             this.ResumeLayout(false);

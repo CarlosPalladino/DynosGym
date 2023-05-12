@@ -1,6 +1,6 @@
 ﻿namespace DinosGimnasio
 {
-    partial class FormMenu
+    partial class Registro
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnTomarFoto = new System.Windows.Forms.Button();
+            this.lbl = new System.Windows.Forms.Label();
+            this.lblAltura = new System.Windows.Forms.Label();
+            this.lblPeso = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.cboMensualidad = new System.Windows.Forms.ComboBox();
             this.btnAgregarImagen = new System.Windows.Forms.Button();
             this.pickImagen = new System.Windows.Forms.PictureBox();
@@ -43,16 +53,6 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblClave = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.lblPeso = new System.Windows.Forms.Label();
-            this.lblAltura = new System.Windows.Forms.Label();
-            this.lbl = new System.Windows.Forms.Label();
-            this.BtnTomarFoto = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pickImagen)).BeginInit();
             this.SuspendLayout();
@@ -89,6 +89,92 @@
             this.panel1.Size = new System.Drawing.Size(626, 565);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // BtnTomarFoto
+            // 
+            this.BtnTomarFoto.Location = new System.Drawing.Point(400, 391);
+            this.BtnTomarFoto.Name = "BtnTomarFoto";
+            this.BtnTomarFoto.Size = new System.Drawing.Size(71, 21);
+            this.BtnTomarFoto.TabIndex = 26;
+            this.BtnTomarFoto.Text = "Sacar Foto";
+            this.BtnTomarFoto.UseVisualStyleBackColor = true;
+            // 
+            // lbl
+            // 
+            this.lbl.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.lbl.AutoSize = true;
+            this.lbl.Location = new System.Drawing.Point(385, 183);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(46, 13);
+            this.lbl.TabIndex = 25;
+            this.lbl.Text = "Objetivo";
+            // 
+            // lblAltura
+            // 
+            this.lblAltura.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.lblAltura.AutoSize = true;
+            this.lblAltura.Location = new System.Drawing.Point(385, 136);
+            this.lblAltura.Name = "lblAltura";
+            this.lblAltura.Size = new System.Drawing.Size(34, 13);
+            this.lblAltura.TabIndex = 24;
+            this.lblAltura.Text = "Altura";
+            // 
+            // lblPeso
+            // 
+            this.lblPeso.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.lblPeso.AutoSize = true;
+            this.lblPeso.Location = new System.Drawing.Point(385, 92);
+            this.lblPeso.Name = "lblPeso";
+            this.lblPeso.Size = new System.Drawing.Size(31, 13);
+            this.lblPeso.TabIndex = 23;
+            this.lblPeso.Text = "Peso";
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(156, 288);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(53, 13);
+            this.lblFecha.TabIndex = 22;
+            this.lblFecha.Text = "Incripcion";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(453, 176);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(114, 20);
+            this.textBox1.TabIndex = 21;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(453, 132);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(114, 20);
+            this.textBox2.TabIndex = 20;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(453, 85);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(114, 20);
+            this.textBox3.TabIndex = 19;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(240, 282);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(107, 20);
+            this.dateTimePicker1.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(450, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Observaciones";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // cboMensualidad
             // 
@@ -207,100 +293,14 @@
             this.lblClave.TabIndex = 0;
             this.lblClave.Text = "Clave";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(450, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Observaciones";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(240, 282);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(107, 20);
-            this.dateTimePicker1.TabIndex = 18;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(453, 176);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(114, 20);
-            this.textBox1.TabIndex = 21;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(453, 132);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(114, 20);
-            this.textBox2.TabIndex = 20;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(453, 85);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(114, 20);
-            this.textBox3.TabIndex = 19;
-            // 
-            // lblFecha
-            // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(156, 288);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(53, 13);
-            this.lblFecha.TabIndex = 22;
-            this.lblFecha.Text = "Incripcion";
-            // 
-            // lblPeso
-            // 
-            this.lblPeso.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.lblPeso.AutoSize = true;
-            this.lblPeso.Location = new System.Drawing.Point(385, 92);
-            this.lblPeso.Name = "lblPeso";
-            this.lblPeso.Size = new System.Drawing.Size(31, 13);
-            this.lblPeso.TabIndex = 23;
-            this.lblPeso.Text = "Peso";
-            // 
-            // lblAltura
-            // 
-            this.lblAltura.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.lblAltura.AutoSize = true;
-            this.lblAltura.Location = new System.Drawing.Point(385, 136);
-            this.lblAltura.Name = "lblAltura";
-            this.lblAltura.Size = new System.Drawing.Size(34, 13);
-            this.lblAltura.TabIndex = 24;
-            this.lblAltura.Text = "Altura";
-            // 
-            // lbl
-            // 
-            this.lbl.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.lbl.AutoSize = true;
-            this.lbl.Location = new System.Drawing.Point(385, 183);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(46, 13);
-            this.lbl.TabIndex = 25;
-            this.lbl.Text = "Objetivo";
-            // 
-            // BtnTomarFoto
-            // 
-            this.BtnTomarFoto.Location = new System.Drawing.Point(400, 391);
-            this.BtnTomarFoto.Name = "BtnTomarFoto";
-            this.BtnTomarFoto.Size = new System.Drawing.Size(71, 21);
-            this.BtnTomarFoto.TabIndex = 26;
-            this.BtnTomarFoto.Text = "Sacar Foto";
-            this.BtnTomarFoto.UseVisualStyleBackColor = true;
-            // 
-            // FormMenu
+            // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1195, 682);
             this.Controls.Add(this.panel1);
-            this.Name = "FormMenu";
-            this.Text = "FormMenu";
+            this.Name = "Registro";
+            this.Text = "Registro";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pickImagen)).EndInit();

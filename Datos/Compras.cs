@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public   class Admin
+    public  class Compras
     {
     }
 }

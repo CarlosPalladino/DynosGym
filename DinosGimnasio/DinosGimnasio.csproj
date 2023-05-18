@@ -80,6 +80,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Vista General.resx">
       <DependentUpon>Vista General.cs</DependentUpon>
@@ -96,6 +97,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{70d260a7-9f3d-41f6-9d46-08e576c4dcbf}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Metodos\Metodos.csproj">
+      <Project>{5db69c91-1feb-4cee-8862-97ba45ba1b98}</Project>
+      <Name>Metodos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DinosGym.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Screenshot_1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

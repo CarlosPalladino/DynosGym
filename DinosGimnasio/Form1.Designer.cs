@@ -31,8 +31,10 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.BtnLogin = new System.Windows.Forms.Button();
             this.PanelMenu = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.User = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.PanelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +45,7 @@
             this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLogin.Font = new System.Drawing.Font("Lucida Sans Typewriter", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLogin.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.BtnLogin.Location = new System.Drawing.Point(113, 231);
+            this.BtnLogin.Location = new System.Drawing.Point(188, 227);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(198, 39);
             this.BtnLogin.TabIndex = 0;
@@ -54,37 +56,62 @@
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.PanelMenu.Controls.Add(this.textBox3);
-            this.PanelMenu.Controls.Add(this.textBox2);
+            this.PanelMenu.Controls.Add(this.label3);
+            this.PanelMenu.Controls.Add(this.User);
+            this.PanelMenu.Controls.Add(this.txtPass);
+            this.PanelMenu.Controls.Add(this.txtUser);
             this.PanelMenu.Controls.Add(this.BtnLogin);
             this.PanelMenu.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.PanelMenu.Location = new System.Drawing.Point(238, 123);
+            this.PanelMenu.Location = new System.Drawing.Point(349, 149);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(432, 308);
+            this.PanelMenu.Size = new System.Drawing.Size(584, 308);
             this.PanelMenu.TabIndex = 1;
+            this.PanelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelMenu_Paint);
             // 
-            // textBox3
+            // txtPass
             // 
-            this.textBox3.Location = new System.Drawing.Point(113, 150);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 21);
-            this.textBox3.TabIndex = 2;
+            this.txtPass.Location = new System.Drawing.Point(186, 152);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(200, 21);
+            this.txtPass.TabIndex = 2;
             // 
-            // textBox2
+            // txtUser
             // 
-            this.textBox2.Location = new System.Drawing.Point(113, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 21);
-            this.textBox2.TabIndex = 1;
+            this.txtUser.Location = new System.Drawing.Point(186, 60);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(200, 21);
+            this.txtUser.TabIndex = 1;
+            // 
+            // User
+            // 
+            this.User.AutoSize = true;
+            this.User.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.User.Location = new System.Drawing.Point(104, 65);
+            this.User.Name = "User";
+            this.User.Size = new System.Drawing.Size(36, 16);
+            this.User.TabIndex = 4;
+            this.User.Text = "User";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(104, 157);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Password";
             // 
             // MenuIngreso
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(895, 525);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1398, 782);
             this.Controls.Add(this.PanelMenu);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.ForeColor = System.Drawing.Color.DarkOrchid;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MenuIngreso";
             this.Padding = new System.Windows.Forms.Padding(7);
@@ -100,8 +127,10 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button BtnLogin;
         private System.Windows.Forms.Panel PanelMenu;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label User;
     }
 }
 

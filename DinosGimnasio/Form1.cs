@@ -19,8 +19,14 @@ namespace DinosGimnasio
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            Registro menu = new Registro();
-            menu.ShowDialog();
+
+            Vista_General vista = new Vista_General();
+            vista.ShowDialog();
+        }
+
+        private void PanelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

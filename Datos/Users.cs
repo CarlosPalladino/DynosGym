@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    internal class Users
+    public class Users
     {
+
+        public int Id { get; set; }
+        public decimal Altura { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public int Documento { get; set; }
+        public string FotoDePerfil { get; set; }
+        public DateTime FechaDeNacimiento { get; set; }
+        public bool Pago { get; set; }
+        public int Peso { get; set; }
+        public int Contacto { get; set; }
+        public string IdCompra { get; set; }
+
+        public bool Admin { get; set; }
+
     }
 }

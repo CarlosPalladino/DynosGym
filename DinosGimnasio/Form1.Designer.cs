@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.BtnLogin = new System.Windows.Forms.Button();
             this.PanelMenu = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.User = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
-            this.User = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.PanelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +47,7 @@
             this.BtnLogin.Location = new System.Drawing.Point(188, 227);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(198, 39);
-            this.BtnLogin.TabIndex = 0;
+            this.BtnLogin.TabIndex = 3;
             this.BtnLogin.Text = "Ingresá";
             this.BtnLogin.UseVisualStyleBackColor = false;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
@@ -62,35 +61,10 @@
             this.PanelMenu.Controls.Add(this.txtUser);
             this.PanelMenu.Controls.Add(this.BtnLogin);
             this.PanelMenu.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.PanelMenu.Location = new System.Drawing.Point(349, 149);
+            this.PanelMenu.Location = new System.Drawing.Point(314, 152);
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(584, 308);
-            this.PanelMenu.TabIndex = 1;
-            this.PanelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelMenu_Paint);
-            // 
-            // txtPass
-            // 
-            this.txtPass.Location = new System.Drawing.Point(186, 152);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(200, 21);
-            this.txtPass.TabIndex = 2;
-            // 
-            // txtUser
-            // 
-            this.txtUser.Location = new System.Drawing.Point(186, 60);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(200, 21);
-            this.txtUser.TabIndex = 1;
-            // 
-            // User
-            // 
-            this.User.AutoSize = true;
-            this.User.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.User.Location = new System.Drawing.Point(104, 65);
-            this.User.Name = "User";
-            this.User.Size = new System.Drawing.Size(36, 16);
-            this.User.TabIndex = 4;
-            this.User.Text = "User";
+            this.PanelMenu.TabIndex = 0;
             // 
             // label3
             // 
@@ -101,6 +75,31 @@
             this.label3.Size = new System.Drawing.Size(67, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Password";
+            // 
+            // User
+            // 
+            this.User.AutoSize = true;
+            this.User.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.User.Location = new System.Drawing.Point(106, 84);
+            this.User.Name = "User";
+            this.User.Size = new System.Drawing.Size(36, 16);
+            this.User.TabIndex = 4;
+            this.User.Text = "User";
+            // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(186, 152);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(200, 21);
+            this.txtPass.TabIndex = 2;
+            this.txtPass.UseSystemPasswordChar = true;
+            // 
+            // txtUser
+            // 
+            this.txtUser.Location = new System.Drawing.Point(188, 84);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(200, 21);
+            this.txtUser.TabIndex = 1;
             // 
             // MenuIngreso
             // 
@@ -123,8 +122,6 @@
         }
 
         #endregion
-
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button BtnLogin;
         private System.Windows.Forms.Panel PanelMenu;
         private System.Windows.Forms.TextBox txtPass;

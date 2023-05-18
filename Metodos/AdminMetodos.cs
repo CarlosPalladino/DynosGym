@@ -9,21 +9,22 @@ namespace Metodos
     public class AdminMetodos
     {
 
-        public bool Login(Admin admin)
+        public bool Login(Admin  admin)
         {
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.setearConsulta("Select Nombre = @nombre,Password =@pass From Admin");
+                datos.setearConsulta("Select  Id, Nombre,Password From Admin where  Nombre=@nombre  And Password = @pass");
                 datos.setearParametro("@nombre", admin.Nombre);
                 datos.setearParametro("@pass", admin.Password);
                 datos.EjecutarLectura();
                 while (datos.Lector.Read())
                 {
                     admin.Id = (int)datos.Lector["id"];
-                    admin.Nombre = (string)datos.Lector["nombre"]
-                        return true;
+                    admin.Nombre = (string)datos.Lector["nombre"];
+                    admin.Password = (string)datos.Lector["password"];
+                    return true;
 
                 }
                 return false;
@@ -32,6 +33,10 @@ namespace Metodos
             {
 
                 throw ex;
+            }
+            finally
+            {
+                datos.CerrarLectura();
             }
         }
 

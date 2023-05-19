@@ -22,22 +22,22 @@ namespace DinosGimnasio
         private void BtnLogin_Click(object sender, EventArgs e)
         {
 
-            AdminMetodos metodo = new AdminMetodos();
+            //AdminMetodos metodo = new AdminMetodos();
             try
             {
-                Admin user = new Admin();
-                user.Nombre = txtUser.Text;
-                user.Password = txtPass.Text;
-                if (metodo.Login(user))
-                {
-                    Vista_General vista = new Vista_General();
+            //    Admin user = new Admin();
+            //    user.Nombre = txtUser.Text;
+            //    user.Password = txtPass.Text;
+            //    if (metodo.Login(user))
+            //    {
+                 Vista_General vista = new Vista_General();
                     vista.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Llena todos los campos ", "Error", MessageBoxButtons.OK);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Llena todos los campos ", "Error", MessageBoxButtons.OK);
 
-                }
+            //    }
 
             }
             catch (Exception)

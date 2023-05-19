@@ -15,6 +15,7 @@ namespace DinosGimnasio
     public partial class Vista_General : Form
     {
     private List<Users> lista;
+        private List<Compras> listacompra;
 
         public Vista_General()
         {
@@ -22,11 +23,24 @@ namespace DinosGimnasio
         }
         private void Vista_General_Load(object sender, EventArgs e)
         {
+            Cargar();
+        }
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Registro nuevo = new Registro();
+            nuevo.ShowDialog();
+        }
+        public void Cargar()
+        {
             MetodoUser metodo = new MetodoUser();
+            Metodocompras compra = new Metodocompras();
             try
             {
                 lista = metodo.lista();
                 dgvUsers.DataSource = lista;
+
+                listacompra = compra.lista();
+                dgvCompras.DataSource = listacompra;
             }
             catch (Exception ex)
             {
@@ -34,15 +48,11 @@ namespace DinosGimnasio
                 throw ex;
             }
         }
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            Registro nuevo = new Registro();
-            nuevo.ShowDialog();
-        }
 
-        private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void OcultarColumnas()
         {
-
+            dgvUsers.Columns["FotoDePerfil"].Visible = false;
         }
+      
     }
 }

@@ -21,7 +21,6 @@ namespace Datos
         public int Contacto { get; set; }
         public string IdCompra { get; set; }
 
-        public bool Admin { get; set; }
 
     }
 }

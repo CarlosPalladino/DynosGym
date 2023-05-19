@@ -8,5 +8,8 @@ namespace Datos
 {
     public  class Compras
     {
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public decimal Precio { get; set; }
     }
 }

@@ -10,23 +10,29 @@ namespace Metodos
     public class MetodoUser
     {
 
-        public List<Users> lista()
+        public List<Usuarios> lista()
         {
-            List<Users> lista = new List<Users>();
+            List<Usuarios> lista = new List<Usuarios>();
             AccesoDatos datos = new AccesoDatos();
             try
+            
             {
-                datos.setearConsulta("Select Nombre,Apellido,Pago,Documento,FechaDeNacimiento,Peso,Altura,Contacto,FechaDeNacimiento from Users ");
+                datos.setearConsulta("Select Nombre,Apellido,Pago,Documento,FotoDePerfil,FechaDeNacimiento,Peso,Altura,Contacto from Usuarios ");
                 datos.EjecutarLectura();
 
                 while (datos.Lector.Read())
                 {
-                    Users user = new Users();
+                    Usuarios user = new Usuarios();
                     user.Nombre = (string)datos.Lector["nombre"];
                     user.Apellido = (string)datos.Lector["Apellido"];
                     user.Pago = (bool)datos.Lector["Pago"];
                     user.Documento = (int)datos.Lector["Documento"];
+                    user.FotoDePerfil = (string)datos.Lector["FotoDePerfil"];
                     user.FechaDeNacimiento = (DateTime)datos.Lector["FechaDeNacimiento"];
+                    user.Peso = (int)datos.Lector["Peso"];
+                    user.Altura = (decimal)datos.Lector["Altura"];
+                    user.Contacto = (int)datos.Lector["Contacto"];
+
 
 
 
@@ -43,21 +49,21 @@ namespace Metodos
             }
         }
 
-        public void Modficar(Users user)
-        {
+        //public void Modficar(Usuarios user)
+        //{
 
-            AccesoDatos datos = new AccesoDatos();
-            try
-            {
-                datos.setearConsulta("");
-                datos.setearParametro();
-                datos.ejecutarAccion();
-            }
-            catch (Exception ex)
-            {
+        //    AccesoDatos datos = new AccesoDatos();
+        //    try
+        //    {
+        //        datos.setearConsulta("");
+        //        datos.setearParametro();
+        //        datos.ejecutarAccion();
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                throw ex;
-            }
-        }
+        //        throw ex;
+        //    }
+        //}
     }
 }

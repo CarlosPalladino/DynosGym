@@ -9,14 +9,21 @@ namespace Metodos
 {
     public class Metodocompras
     {
-        public List<Compras> lista()
+        public List<Compra> lista()
         {
             AccesoDatos datos = new AccesoDatos();
-            List<Compras> lista = new List<Compras>();
+            List<Compra> lista = new List<Compra>();
             try
             {
-                datos.setearConsulta("select  C.Nombre, precio from Compras C ,Users U where U.IdCompra = C.id");
+                datos.setearConsulta("select C.Nombre, precio from Compra C,Usuarios U where C.IdUsuario = U.id");
                 datos.EjecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Compra compra = new Compra();
+                    compra.nombre = (string)datos.Lector["nombre"];
+                    compra.Precio = (decimal)datos.Lector["Precio"];
+                    lista.Add(compra);
+                }
 
                 return lista;
 

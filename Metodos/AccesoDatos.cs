@@ -19,14 +19,14 @@ namespace Metodos
         {
             get { return lector; }
         }
-        public void Permiso()
-        {
-            permiso.Add("server =.\\SQLEXPRESS; database=DinosGym; integrated security= true", "Connect", KeyRestrictionBehavior.AllowOnly);
-            permiso.Add("server =.\\SQLEXPRESS; database=DinosGym; integrated security= true", "Execute", KeyRestrictionBehavior.AllowOnly);
-            permiso.Add("server =.\\SQLEXPRESS; database=DinosGym; integrated security= true", "Select", KeyRestrictionBehavior.AllowOnly);
-            permiso.Add("server =.\\SQLEXPRESS; database=DinosGym; integrated security= true", "DataWriter", KeyRestrictionBehavior.AllowOnly);
+        //public void Permiso()
+        //{
+        //    permiso.Add("server =.\\SQLEXPRESS; database=DinosGym; integrated security= true", "Connect", KeyRestrictionBehavior.AllowOnly);
+        //    permiso.Add("server =.\\SQLEXPRESS; database=DinosGym; integrated security= true", "Execute", KeyRestrictionBehavior.AllowOnly);
+        //    permiso.Add("server =.\\SQLEXPRESS; database=DinosGym; integrated security= true", "Select", KeyRestrictionBehavior.AllowOnly);
+        //    permiso.Add("server =.\\SQLEXPRESS; database=DinosGym; integrated security= true", "DataWriter", KeyRestrictionBehavior.AllowOnly);
 
-        }
+        //}
         public AccesoDatos()
         {
             conexion = new SqlConnection("server =.\\SQLEXPRESS; database=DinosGym; integrated security= true");

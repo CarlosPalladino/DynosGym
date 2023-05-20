@@ -15,7 +15,7 @@ namespace Metodos
 
             try
             {
-                datos.setearConsulta("Select  Id, Nombre,Password From Admin where  Nombre=@nombre  And Password = @pass");
+                datos.setearConsulta("Select  Id, Nombre,Password From Admin where Nombre=@nombre  And Password = @pass");
                 datos.setearParametro("@nombre", admin.Nombre);
                 datos.setearParametro("@pass", admin.Password);
                 datos.EjecutarLectura();

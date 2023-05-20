@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.PanelHeader = new System.Windows.Forms.Panel();
+            this.btnNuevaCompra = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.picImagen = new System.Windows.Forms.PictureBox();
-            this.btnNuevaCompra = new System.Windows.Forms.Button();
             this.dgvCompras = new System.Windows.Forms.DataGridView();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
@@ -51,6 +51,15 @@
             this.PanelHeader.Name = "PanelHeader";
             this.PanelHeader.Size = new System.Drawing.Size(1231, 111);
             this.PanelHeader.TabIndex = 0;
+            // 
+            // btnNuevaCompra
+            // 
+            this.btnNuevaCompra.Location = new System.Drawing.Point(348, 32);
+            this.btnNuevaCompra.Name = "btnNuevaCompra";
+            this.btnNuevaCompra.Size = new System.Drawing.Size(92, 28);
+            this.btnNuevaCompra.TabIndex = 4;
+            this.btnNuevaCompra.Text = "Nuva compra";
+            this.btnNuevaCompra.UseVisualStyleBackColor = true;
             // 
             // btnModificar
             // 
@@ -95,15 +104,6 @@
             this.picImagen.Size = new System.Drawing.Size(384, 392);
             this.picImagen.TabIndex = 2;
             this.picImagen.TabStop = false;
-            // 
-            // btnNuevaCompra
-            // 
-            this.btnNuevaCompra.Location = new System.Drawing.Point(375, 34);
-            this.btnNuevaCompra.Name = "btnNuevaCompra";
-            this.btnNuevaCompra.Size = new System.Drawing.Size(98, 28);
-            this.btnNuevaCompra.TabIndex = 4;
-            this.btnNuevaCompra.Text = "Nuva compra";
-            this.btnNuevaCompra.UseVisualStyleBackColor = true;
             // 
             // dgvCompras
             // 

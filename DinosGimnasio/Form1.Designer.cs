@@ -44,7 +44,7 @@
             this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLogin.Font = new System.Drawing.Font("Lucida Sans Typewriter", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLogin.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.BtnLogin.Location = new System.Drawing.Point(188, 227);
+            this.BtnLogin.Location = new System.Drawing.Point(186, 227);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(198, 39);
             this.BtnLogin.TabIndex = 3;

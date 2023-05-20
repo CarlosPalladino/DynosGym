@@ -14,8 +14,8 @@ namespace DinosGimnasio
 {
     public partial class Vista_General : Form
     {
-    private List<Users> lista;
-        private List<Compras> listacompra;
+        private List<Usuarios> lista;
+        private List<Compra> listacompra;
 
         public Vista_General()
         {
@@ -41,6 +41,7 @@ namespace DinosGimnasio
 
                 listacompra = compra.lista();
                 dgvCompras.DataSource = listacompra;
+                OcultarColumnas();
             }
             catch (Exception ex)
             {
@@ -53,6 +54,7 @@ namespace DinosGimnasio
         {
             dgvUsers.Columns["FotoDePerfil"].Visible = false;
         }
-      
+
+
     }
 }

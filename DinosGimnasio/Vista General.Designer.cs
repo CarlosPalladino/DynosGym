@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.PanelHeader = new System.Windows.Forms.Panel();
-            this.btnNuevaCompra = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnNuevaCompra = new System.Windows.Forms.Button();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.picImagen = new System.Windows.Forms.PictureBox();
             this.dgvCompras = new System.Windows.Forms.DataGridView();
@@ -44,22 +44,12 @@
             // PanelHeader
             // 
             this.PanelHeader.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.PanelHeader.Controls.Add(this.btnNuevaCompra);
             this.PanelHeader.Controls.Add(this.btnModificar);
             this.PanelHeader.Controls.Add(this.btnNuevo);
             this.PanelHeader.Location = new System.Drawing.Point(-1, 1);
             this.PanelHeader.Name = "PanelHeader";
             this.PanelHeader.Size = new System.Drawing.Size(1231, 111);
             this.PanelHeader.TabIndex = 0;
-            // 
-            // btnNuevaCompra
-            // 
-            this.btnNuevaCompra.Location = new System.Drawing.Point(348, 32);
-            this.btnNuevaCompra.Name = "btnNuevaCompra";
-            this.btnNuevaCompra.Size = new System.Drawing.Size(92, 28);
-            this.btnNuevaCompra.TabIndex = 4;
-            this.btnNuevaCompra.Text = "Nuva compra";
-            this.btnNuevaCompra.UseVisualStyleBackColor = true;
             // 
             // btnModificar
             // 
@@ -80,6 +70,15 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // btnNuevaCompra
+            // 
+            this.btnNuevaCompra.Location = new System.Drawing.Point(1078, 562);
+            this.btnNuevaCompra.Name = "btnNuevaCompra";
+            this.btnNuevaCompra.Size = new System.Drawing.Size(92, 28);
+            this.btnNuevaCompra.TabIndex = 4;
+            this.btnNuevaCompra.Text = "Nuva compra";
+            this.btnNuevaCompra.UseVisualStyleBackColor = true;
+            // 
             // dgvUsers
             // 
             this.dgvUsers.AllowUserToOrderColumns = true;
@@ -96,6 +95,7 @@
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsers.Size = new System.Drawing.Size(830, 392);
             this.dgvUsers.TabIndex = 1;
+            this.dgvUsers.SelectionChanged += new System.EventHandler(this.dgvUsers_SelectionChanged);
             // 
             // picImagen
             // 
@@ -108,7 +108,7 @@
             // dgvCompras
             // 
             this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompras.Location = new System.Drawing.Point(202, 528);
+            this.dgvCompras.Location = new System.Drawing.Point(186, 528);
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.Size = new System.Drawing.Size(833, 173);
             this.dgvCompras.TabIndex = 5;
@@ -119,6 +119,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1231, 713);
+            this.Controls.Add(this.btnNuevaCompra);
             this.Controls.Add(this.dgvCompras);
             this.Controls.Add(this.picImagen);
             this.Controls.Add(this.dgvUsers);

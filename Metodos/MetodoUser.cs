@@ -10,10 +10,10 @@ namespace Metodos
     public class MetodoUser
     {
 
+        public AccesoDatos datos = new AccesoDatos();   
         public List<Usuarios> lista()
         {
             List<Usuarios> lista = new List<Usuarios>();
-            AccesoDatos datos = new AccesoDatos();
             try
             
             {
@@ -27,7 +27,9 @@ namespace Metodos
                     user.Apellido = (string)datos.Lector["Apellido"];
                     user.Pago = (bool)datos.Lector["Pago"];
                     user.Documento = (int)datos.Lector["Documento"];
+                    if(!(datos.Lector["FotoDePerfil"] is DBNull))
                     user.FotoDePerfil = (string)datos.Lector["FotoDePerfil"];
+
                     user.FechaDeNacimiento = (DateTime)datos.Lector["FechaDeNacimiento"];
                     user.Peso = (int)datos.Lector["Peso"];
                     user.Altura = (decimal)datos.Lector["Altura"];
@@ -49,21 +51,61 @@ namespace Metodos
             }
         }
 
-        //public void Modficar(Usuarios user)
-        //{
+       public void Nuevo(Usuarios user)
+       {
 
-        //    AccesoDatos datos = new AccesoDatos();
-        //    try
-        //    {
-        //        datos.setearConsulta("");
-        //        datos.setearParametro();
-        //        datos.ejecutarAccion();
-        //    }
-        //    catch (Exception ex)
-        //    {
+           try
+           {
+               datos.setearConsulta("insert into Usuarios( Nombre,Apellido,Pago,Documento,FotoDePerfil,FechaDeNacimiento,Peso,Altura,Contacto)Values(@nombre,@apellido,@pago,@doc,@foto,@fecha,@peso,@altura,@contacto)");
+               datos.setearParametro("@nombre",user.Nombre);
+                datos.setearParametro("@apellido", user.Apellido);
+                datos.setearParametro("@pago", user.Pago);
+                datos.setearParametro("@doc", user.Documento);
+                datos.setearParametro("@foto", user.FotoDePerfil);
+                datos.setearParametro("@fecha", user.FechaDeNacimiento);
+                datos.setearParametro("@peso", user.Peso);
+                datos.setearParametro("@altura", user.Altura);
+                datos.setearParametro("@contacto", user.Contacto);
 
-        //        throw ex;
-        //    }
-        //}
+                datos.EjecutarLectura();
+           }
+           catch (Exception ex)
+           {
+
+               throw ex;
+           }
+       }
+
+        public void Modificar(Usuarios modi)
+        {
+            try
+            {
+                datos.setearConsulta("update Usuarios set ");
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

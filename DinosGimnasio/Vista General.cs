@@ -41,6 +41,7 @@ namespace DinosGimnasio
 
                 listacompra = compra.lista();
                 dgvCompras.DataSource = listacompra;
+                CargarImagen(lista[0].FotoDePerfil);
                 OcultarColumnas();
             }
             catch (Exception ex)
@@ -50,11 +51,35 @@ namespace DinosGimnasio
             }
         }
 
+        private void CargarImagen(string imagen)
+        {
+            try
+            {
+                picImagen.Load(imagen);
+            }
+            catch (Exception)
+            {
+
+                {
+                    picImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoNaLFFSdD4YhW8mqgDBSWY8nHnte6ANHQWz6Lsl37yA&s");
+
+                }
+            }
+        }
         public void OcultarColumnas()
         {
             dgvUsers.Columns["FotoDePerfil"].Visible = false;
+            dgvUsers.Columns["Pago"].Visible = false;
+
         }
 
-
+        private void dgvUsers_SelectionChanged(object sender, EventArgs e)
+        {
+            if(dgvUsers.CurrentRow != null)
+            {
+                Usuarios seleccionado = (Usuarios)dgvUsers.CurrentRow.DataBoundItem;
+                Cargar
+            }
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using Datos;
+﻿using AForge.Video;
+using AForge.Video.DirectShow;
+using Datos;
 using Metodos;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,10 @@ namespace DinosGimnasio
 {
     public partial class Registro : Form
     {
+        public string path = @"C:\\Users\\Carlos\\Desktop\\DinosGimnasioPresentacion";
+        private bool HayDispositivo;
+        private FilterInfoCollection misDispositivos;
+        private VideoCaptureDevice WebCam;
         private OpenFileDialog archivo = null;
 
         public Registro()
@@ -22,6 +28,23 @@ namespace DinosGimnasio
         }
 
 
+        private void Registro_Load(object sender, EventArgs e)
+        {
+            CargarDispositivo();
+        }
+
+        public void CargarDispositivo()
+        {
+            misDispositivos = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            if (misDispositivos.Count > 0)
+            {
+                HayDispositivo = true;
+            }
+            else
+
+                HayDispositivo = false;
+
+        }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -36,9 +59,9 @@ namespace DinosGimnasio
                 User.Documento = int.Parse(txtDni.Text);
                 User.Peso = int.Parse(txtPeso.Text);
                 User.FechaDeNacimiento = dtpFecha.Value;
-                User.FotoDePerfil  = pickImagen.ToString();
+                User.FotoDePerfil = pickImagen.ToString();
 
-            metodo.Nuevo(User);
+                metodo.Nuevo(User);
             }
             catch (Exception ex)
             {
@@ -74,7 +97,7 @@ namespace DinosGimnasio
 
 
             }
-        
+
             catch (Exception ex)
             {
 
@@ -83,7 +106,33 @@ namespace DinosGimnasio
                 }
             }
         }
+        private void cerrarWebCam()
+        {
+            if(WebCam != null && WebCam.IsRunning)
+            {
+               WebCam.SignalToStop();
+                WebCam = null;
+            }
+        }
+        private void BtnTomarFoto_Click(object sender, EventArgs e)
+        {
+            cerrarWebCam();
+            WebCam = new VideoCaptureDevice(misDispositivos[0].MonikerString);
+            WebCam.NewFrame += new NewFrameEventHandler(Capturando);
+            WebCam.Start();
+        }
 
-     
+        private void Capturando(object sender, NewFrameEventArgs eventArgs)
+        {
+            Bitmap imagen = (Bitmap)eventArgs.Frame.Clone();
+            pickImagen.Image = imagen;
+        }
+
+   
+
+        private void Registro_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            cerrarWebCam();
+        }
     }
 }

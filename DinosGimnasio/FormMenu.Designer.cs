@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.lblContacto = new System.Windows.Forms.Label();
             this.txtContacto = new System.Windows.Forms.TextBox();
             this.BtnTomarFoto = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.lblDni = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pickImagen)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +79,16 @@
             this.panel1.Size = new System.Drawing.Size(626, 510);
             this.panel1.TabIndex = 0;
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(413, 321);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(71, 23);
+            this.btnAgregar.TabIndex = 29;
+            this.btnAgregar.Text = "agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // lblContacto
             // 
             this.lblContacto.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -104,6 +114,7 @@
             this.BtnTomarFoto.TabIndex = 26;
             this.BtnTomarFoto.Text = "Sacar Foto";
             this.BtnTomarFoto.UseVisualStyleBackColor = true;
+            this.BtnTomarFoto.Click += new System.EventHandler(this.BtnTomarFoto_Click);
             // 
             // lblAltura
             // 
@@ -232,16 +243,6 @@
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre";
             // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(413, 321);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(71, 23);
-            this.btnAgregar.TabIndex = 29;
-            this.btnAgregar.Text = "agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,6 +251,8 @@
             this.Controls.Add(this.panel1);
             this.Name = "Registro";
             this.Text = "Registro";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Registro_FormClosed);
+            this.Load += new System.EventHandler(this.Registro_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pickImagen)).EndInit();

@@ -68,6 +68,7 @@ namespace Metodos
                 datos.setearParametro("@contacto", user.Contacto);
 
                 datos.EjecutarLectura();
+                
            }
            catch (Exception ex)
            {

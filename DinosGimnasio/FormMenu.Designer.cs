@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.lblContacto = new System.Windows.Forms.Label();
             this.txtContacto = new System.Windows.Forms.TextBox();
             this.BtnTomarFoto = new System.Windows.Forms.Button();
@@ -48,6 +47,7 @@
             this.lblDni = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.btnCapturar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pickImagen)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +55,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel1.Controls.Add(this.btnAgregar);
+            this.panel1.Controls.Add(this.btnCapturar);
             this.panel1.Controls.Add(this.lblContacto);
             this.panel1.Controls.Add(this.txtContacto);
             this.panel1.Controls.Add(this.BtnTomarFoto);
@@ -79,16 +79,6 @@
             this.panel1.Size = new System.Drawing.Size(626, 510);
             this.panel1.TabIndex = 0;
             // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(413, 321);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(71, 23);
-            this.btnAgregar.TabIndex = 29;
-            this.btnAgregar.Text = "agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
             // lblContacto
             // 
             this.lblContacto.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -108,7 +98,7 @@
             // 
             // BtnTomarFoto
             // 
-            this.BtnTomarFoto.Location = new System.Drawing.Point(413, 362);
+            this.BtnTomarFoto.Location = new System.Drawing.Point(411, 339);
             this.BtnTomarFoto.Name = "BtnTomarFoto";
             this.BtnTomarFoto.Size = new System.Drawing.Size(71, 21);
             this.BtnTomarFoto.TabIndex = 26;
@@ -243,6 +233,16 @@
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre";
             // 
+            // btnCapturar
+            // 
+            this.btnCapturar.Location = new System.Drawing.Point(411, 380);
+            this.btnCapturar.Name = "btnCapturar";
+            this.btnCapturar.Size = new System.Drawing.Size(75, 23);
+            this.btnCapturar.TabIndex = 29;
+            this.btnCapturar.Text = "Caputar";
+            this.btnCapturar.UseVisualStyleBackColor = true;
+            this.btnCapturar.Click += new System.EventHandler(this.btnCapturar_Click);
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +281,6 @@
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label lblContacto;
         private System.Windows.Forms.TextBox txtContacto;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnCapturar;
     }
 }

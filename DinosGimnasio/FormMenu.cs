@@ -7,17 +7,23 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Configuration;
 namespace DinosGimnasio
 {
     public partial class Registro : Form
+
+
     {
-        public string path = @"D:\Escritorio\DinosGimnasioPresentacion"; // cambiar dependiendo de la carpeta  ?
+
+        private string nombreImagenCapturada = "";
+
+        public string path = @"D:\Escritorio\DinosGimnasioPresentacion\"; // cambiar dependiendo de la carpeta  ?
         private bool HayDispositivo;
         private FilterInfoCollection misDispositivos;
         private VideoCaptureDevice WebCam;
@@ -60,11 +66,11 @@ namespace DinosGimnasio
                 User.Documento = int.Parse(txtDni.Text);
                 User.Peso = int.Parse(txtPeso.Text);
                 User.FechaDeNacimiento = dtpFecha.Value;
-                User.FotoDePerfil = pickImagen.ToString();
+                User.FotoDePerfil = nombreImagenCapturada;
 
                 metodo.Nuevo(User);
                 MessageBox.Show("agregado exitoso ");
-                
+
             }
             catch (Exception ex)
             {
@@ -101,7 +107,7 @@ namespace DinosGimnasio
 
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 {
@@ -142,11 +148,16 @@ namespace DinosGimnasio
         {
             if (WebCam != null && WebCam.IsRunning)
             {
-                //pickImagen.Image = pickImagen.Image;
-                pickImagen.Image.Save(path + "imagen.jpeg", ImageFormat.Jpeg);
+                nombreImagenCapturada = DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpeg";
+
+                string rutaImagen = path + nombreImagenCapturada;
+                
+                pickImagen.Image.Save(rutaImagen,ImageFormat.Jpeg);
                 cerrarWebCam();
+
 
             }
         }
+     
     }
 }

@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Datos;
-using Aforge;
 
 namespace DinosGimnasio
 {
@@ -79,7 +78,7 @@ namespace DinosGimnasio
             if(dgvUsers.CurrentRow != null)
             {
                 Usuarios seleccionado = (Usuarios)dgvUsers.CurrentRow.DataBoundItem;
-                Cargar
+                CargarImagen(seleccionado.FotoDePerfil);
             }
         }
     }

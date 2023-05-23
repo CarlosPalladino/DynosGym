@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace DinosGimnasio
 {
     public partial class Registro : Form
     {
-        public string path = @"C:\\Users\\Carlos\\Desktop\\DinosGimnasioPresentacion";
+        public string path = @"D:\Escritorio\DinosGimnasioPresentacion"; // cambiar dependiendo de la carpeta  ?
         private bool HayDispositivo;
         private FilterInfoCollection misDispositivos;
         private VideoCaptureDevice WebCam;
@@ -62,6 +63,8 @@ namespace DinosGimnasio
                 User.FotoDePerfil = pickImagen.ToString();
 
                 metodo.Nuevo(User);
+                MessageBox.Show("agregado exitoso ");
+                
             }
             catch (Exception ex)
             {
@@ -108,9 +111,9 @@ namespace DinosGimnasio
         }
         private void cerrarWebCam()
         {
-            if(WebCam != null && WebCam.IsRunning)
+            if (WebCam != null && WebCam.IsRunning)
             {
-               WebCam.SignalToStop();
+                WebCam.SignalToStop();
                 WebCam = null;
             }
         }
@@ -128,11 +131,22 @@ namespace DinosGimnasio
             pickImagen.Image = imagen;
         }
 
-   
+
 
         private void Registro_FormClosed(object sender, FormClosedEventArgs e)
         {
             cerrarWebCam();
+        }
+
+        private void btnCapturar_Click(object sender, EventArgs e)
+        {
+            if (WebCam != null && WebCam.IsRunning)
+            {
+                //pickImagen.Image = pickImagen.Image;
+                pickImagen.Image.Save(path + "imagen.jpeg", ImageFormat.Jpeg);
+                cerrarWebCam();
+
+            }
         }
     }
 }

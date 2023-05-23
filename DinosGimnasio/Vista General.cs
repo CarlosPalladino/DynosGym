@@ -29,6 +29,7 @@ namespace DinosGimnasio
         {
             Registro nuevo = new Registro();
             nuevo.ShowDialog();
+            Cargar();
         }
         public void Cargar()
         {

@@ -26,14 +26,14 @@ namespace Metodos
                     user.Nombre = (string)datos.Lector["nombre"];
                     user.Apellido = (string)datos.Lector["Apellido"];
                     user.Pago = (bool)datos.Lector["Pago"];
-                    user.Documento = (int)datos.Lector["Documento"];
+                    user.Documento = (long)datos.Lector["Documento"];
                     if(!(datos.Lector["FotoDePerfil"] is DBNull))
                     user.FotoDePerfil = (string)datos.Lector["FotoDePerfil"];
 
                     user.FechaDeNacimiento = (DateTime)datos.Lector["FechaDeNacimiento"];
                     user.Peso = (int)datos.Lector["Peso"];
                     user.Altura = (decimal)datos.Lector["Altura"];
-                    user.Contacto = (int)datos.Lector["Contacto"];
+                    user.Contacto = (long)datos.Lector["Contacto"];
 
 
 

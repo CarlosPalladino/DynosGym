@@ -9,11 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Datos;
+using System.IO;
 
 namespace DinosGimnasio
 {
     public partial class Vista_General : Form
     {
+
+    //string  ruta  = "D:\Escritorio\DinosGimnasioPresentacion";
         private List<Usuarios> lista;
         private List<Compra> listacompra;
 
@@ -39,10 +42,10 @@ namespace DinosGimnasio
             {
                 lista = metodo.lista();
                 dgvUsers.DataSource = lista;
+                CargarImagen(lista[0].FotoDePerfil);
 
                 listacompra = compra.lista();
                 dgvCompras.DataSource = listacompra;
-                CargarImagen(lista[0].FotoDePerfil);
                 OcultarColumnas();
             }
             catch (Exception ex)
@@ -56,13 +59,20 @@ namespace DinosGimnasio
         {
             try
             {
-                picImagen.Load(imagen);
+                //string[] archivos = Directory.GetFiles(ruta, "*.jpeg");
+
+                //foreach (string archivo in archivos)
+                //{ 
+                picImg.Image = Image.FromFile(imagen)
+                    //picImg.Load(imagen);
+                    //picImagen.ImageLocation = archivo;
+                //}
             }
             catch (Exception)
             {
 
                 {
-                    picImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoNaLFFSdD4YhW8mqgDBSWY8nHnte6ANHQWz6Lsl37yA&s");
+                    picImg.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoNaLFFSdD4YhW8mqgDBSWY8nHnte6ANHQWz6Lsl37yA&s");
 
                 }
             }
@@ -71,16 +81,18 @@ namespace DinosGimnasio
         {
             dgvUsers.Columns["FotoDePerfil"].Visible = false;
             dgvUsers.Columns["Pago"].Visible = false;
-
+            dgvUsers.Columns["id"].Visible = false;
         }
 
         private void dgvUsers_SelectionChanged(object sender, EventArgs e)
+
         {
-            if(dgvUsers.CurrentRow != null)
+            if (dgvUsers.CurrentRow != null)
             {
                 Usuarios seleccionado = (Usuarios)dgvUsers.CurrentRow.DataBoundItem;
                 CargarImagen(seleccionado.FotoDePerfil);
             }
         }
+
     }
 }

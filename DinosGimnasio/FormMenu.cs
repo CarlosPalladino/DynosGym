@@ -61,15 +61,16 @@ namespace DinosGimnasio
             {
                 User.Nombre = txtNombre.Text;
                 User.Apellido = txtApelido.Text;
-                User.Contacto = int.Parse(txtContacto.Text);
+                User.Contacto = long.Parse(txtContacto.Text);
                 User.Altura = decimal.Parse(txtAltura.Text);
-                User.Documento = int.Parse(txtDni.Text);
+                User.Documento = long.Parse(txtDni.Text);
                 User.Peso = int.Parse(txtPeso.Text);
                 User.FechaDeNacimiento = dtpFecha.Value;
                 User.FotoDePerfil = nombreImagenCapturada;
 
                 metodo.Nuevo(User);
                 MessageBox.Show("agregado exitoso ");
+                Close();
 
             }
             catch (Exception ex)
@@ -78,24 +79,6 @@ namespace DinosGimnasio
                 throw ex;
             }
         }
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                archivo = new OpenFileDialog();
-                archivo.Filter = "jpg|*.jpg;| png|*.PNG;| jepg| *.jepg";
-                if (archivo.ShowDialog() == DialogResult.OK)
-                {
-                    cargarImagen(archivo.FileName);
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
 
 
         private void cargarImagen(string imagen)
@@ -150,14 +133,17 @@ namespace DinosGimnasio
             {
                 nombreImagenCapturada = DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpeg";
 
-                string rutaImagen = path + nombreImagenCapturada;
-                
-                pickImagen.Image.Save(rutaImagen,ImageFormat.Jpeg);
+
+                string rutaImagen = Path.Combine(path, nombreImagenCapturada);
+
+                pickImagen.ImageLocation = rutaImagen;
+
+                pickImagen.Image.Save(rutaImagen, ImageFormat.Jpeg);
                 cerrarWebCam();
 
 
             }
         }
-     
+
     }
 }

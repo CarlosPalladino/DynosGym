@@ -59,14 +59,15 @@ namespace DinosGimnasio
         {
             try
             {
-                //string[] archivos = Directory.GetFiles(ruta, "*.jpeg");
 
-                //foreach (string archivo in archivos)
-                //{ 
-                picImg.Image = Image.FromFile(imagen)
-                    //picImg.Load(imagen);
-                    //picImagen.ImageLocation = archivo;
-                //}
+                //picImg.Image = Image.FromFile(imagen);
+                //picImg.Load(imagen);
+
+                string rutaCompleta = Path.Combine(@"D:\\Escritorio\\DinosGimnasioPresentacion", imagen);
+
+                picImg.Image = Image.FromFile(rutaCompleta);
+                picImg.Load(rutaCompleta);
+
             }
             catch (Exception)
             {
@@ -85,14 +86,13 @@ namespace DinosGimnasio
         }
 
         private void dgvUsers_SelectionChanged(object sender, EventArgs e)
-
         {
+
             if (dgvUsers.CurrentRow != null)
             {
                 Usuarios seleccionado = (Usuarios)dgvUsers.CurrentRow.DataBoundItem;
                 CargarImagen(seleccionado.FotoDePerfil);
             }
         }
-
     }
 }

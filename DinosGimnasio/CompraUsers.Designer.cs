@@ -52,7 +52,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(335, 237);
+            this.btnAceptar.Location = new System.Drawing.Point(327, 298);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(96, 40);
             this.btnAceptar.TabIndex = 2;
@@ -62,7 +62,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(183, 237);
+            this.btnReset.Location = new System.Drawing.Point(175, 298);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(96, 40);
             this.btnReset.TabIndex = 3;

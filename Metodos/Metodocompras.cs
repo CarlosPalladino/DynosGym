@@ -47,9 +47,9 @@ namespace Metodos
                 datos.setearConsulta("Insert into Compra(nombre,Precio,IdUsuario)values(@nombre,@precio, @idUser)" );
                 datos.setearParametro("@nombre",compra.nombre);
                 datos.setearParametro("@precio", compra.Precio);
-                datos.setearParametro("@idUser",compra.IdUsuario); // igualo el usuario del dgv
+                datos.setearParametro("@idUser", compra.IdUsuario); // igualo el usuario del dgv
 
-                datos.EjecutarLectura();
+                datos.ejecutarAccion();
             }
             catch (Exception ex)
             {

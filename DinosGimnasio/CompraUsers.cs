@@ -14,31 +14,43 @@ namespace DinosGimnasio
 {
     public partial class CompraUsers : Form
     {
-        
+
+
+        private Usuarios usuario = null;
+
+
 
         public CompraUsers()
         {
             InitializeComponent();
         }
+        public CompraUsers(Usuarios usuario)
+        {
+
+            InitializeComponent();
+
+            this.usuario = usuario;
+        }
+
+
+
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             Metodocompras metodo = new Metodocompras();
             Compra compras = new Compra();
-            Usuarios user = new Usuarios();
             try
-             {
+            {
 
-                compras.nombre =txtNombre.Text;
-                compras.Precio =decimal.Parse(txtPrecio.Text);
-                compras.IdUsuario = user.Id;
+                compras.nombre = txtNombre.Text;
+                compras.Precio = decimal.Parse(txtPrecio.Text);
+                compras.IdUsuario = usuario.Id;
 
 
-                
                 metodo.Nuevo(compras);
-            
+
                 MessageBox.Show("Compra Agregada");
-                Close();    
+                Close();
             }
             catch (Exception ex)
             {
@@ -52,6 +64,7 @@ namespace DinosGimnasio
 
         private void CompraUsers_Load(object sender, EventArgs e)
         {
+
 
         }
     }

@@ -15,7 +15,7 @@ namespace DinosGimnasio
 {
     public partial class Vista_General : Form
     {
-      
+
 
         private List<Usuarios> lista;
         private List<Compra> listacompra;
@@ -37,15 +37,11 @@ namespace DinosGimnasio
         public void Cargar()
         {
             MetodoUser metodo = new MetodoUser();
-            Metodocompras compra = new Metodocompras();
             try
             {
                 lista = metodo.lista();
                 dgvUsers.DataSource = lista;
                 CargarImagen(lista[0].FotoDePerfil);
-                dgvCompras.DataSource = compra;
-                listacompra = compra.lista();
-                dgvCompras.DataSource = listacompra;
                 OcultarColumnas();
             }
             catch (Exception ex)
@@ -59,20 +55,9 @@ namespace DinosGimnasio
         {
             try
             {
-<<<<<<< HEAD
-               
+
                 picImg.Image = Image.FromFile(imagen);
-=======
 
-                //picImg.Image = Image.FromFile(imagen);
-                //picImg.Load(imagen);
-
-                string rutaCompleta = Path.Combine(@"D:\\Escritorio\\DinosGimnasioPresentacion", imagen);
-
-                picImg.Image = Image.FromFile(rutaCompleta);
-                picImg.Load(rutaCompleta);
-
->>>>>>> cb571ebaebf8f77b07c016398f704bf4f2c219a6
             }
             catch (Exception)
             {
@@ -87,8 +72,7 @@ namespace DinosGimnasio
         {
             dgvUsers.Columns["FotoDePerfil"].Visible = false;
             dgvUsers.Columns["Pago"].Visible = false;
-            dgvUsers.Columns["Id"].Visible = false;
-                dgvUsers.Columns["IdCompra"].Visible = false;
+            //dgvUsers.Columns["Id"].Visible = false;
         }
 
         private void dgvUsers_SelectionChanged(object sender, EventArgs e)
@@ -100,19 +84,23 @@ namespace DinosGimnasio
                 CargarImagen(seleccionado.FotoDePerfil);
             }
         }
-<<<<<<< HEAD
-
         private void btnNuevaCompra_Click(object sender, EventArgs e)
         {
             CompraUsers compra = new CompraUsers();
             compra.ShowDialog();
 
         }
-
-        private void dgvCompras_SelectionChanged(object sender, EventArgs e)
+        private void btnComprar_Click(object sender, EventArgs e)
         {
+            if (dgvUsers.CurrentRow != null)
+            {
+
+                Usuarios seleccionado = (Usuarios)dgvUsers.CurrentRow.DataBoundItem;
+
+                CompraUsers compra = new CompraUsers(seleccionado);
+                compra.ShowDialog();
+
+            }
         }
-=======
->>>>>>> cb571ebaebf8f77b07c016398f704bf4f2c219a6
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class Usuarios : Compra
+    public class Usuarios 
     {
 
         public int Id { get; set; }
@@ -19,7 +19,6 @@ namespace Datos
         public bool Pago { get; set; }
         public int Peso { get; set; }
         public long Contacto { get; set; }
-        public string IdCompra { get; set; }
 
 
 

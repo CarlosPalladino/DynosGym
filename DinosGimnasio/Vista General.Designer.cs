@@ -31,14 +31,12 @@
             this.PanelHeader = new System.Windows.Forms.Panel();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnNuevaCompra = new System.Windows.Forms.Button();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.picImg = new System.Windows.Forms.PictureBox();
-            this.dgvCompras = new System.Windows.Forms.DataGridView();
+            this.btnComprar = new System.Windows.Forms.Button();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -70,16 +68,6 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // btnNuevaCompra
-            // 
-            this.btnNuevaCompra.Location = new System.Drawing.Point(1078, 562);
-            this.btnNuevaCompra.Name = "btnNuevaCompra";
-            this.btnNuevaCompra.Size = new System.Drawing.Size(92, 28);
-            this.btnNuevaCompra.TabIndex = 4;
-            this.btnNuevaCompra.Text = "Nueva compra";
-            this.btnNuevaCompra.UseVisualStyleBackColor = true;
-            this.btnNuevaCompra.Click += new System.EventHandler(this.btnNuevaCompra_Click);
-            // 
             // dgvUsers
             // 
             this.dgvUsers.AllowUserToOrderColumns = true;
@@ -106,14 +94,15 @@
             this.picImg.TabIndex = 2;
             this.picImg.TabStop = false;
             // 
-            // dgvCompras
+            // btnComprar
             // 
-            this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompras.Location = new System.Drawing.Point(186, 528);
-            this.dgvCompras.Name = "dgvCompras";
-            this.dgvCompras.Size = new System.Drawing.Size(833, 173);
-            this.dgvCompras.TabIndex = 5;
-            this.dgvCompras.SelectionChanged += new System.EventHandler(this.dgvCompras_SelectionChanged);
+            this.btnComprar.Location = new System.Drawing.Point(879, 550);
+            this.btnComprar.Name = "btnComprar";
+            this.btnComprar.Size = new System.Drawing.Size(123, 32);
+            this.btnComprar.TabIndex = 2;
+            this.btnComprar.Text = "Comprar";
+            this.btnComprar.UseVisualStyleBackColor = true;
+            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
             // Vista_General
             // 
@@ -121,8 +110,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1231, 713);
-            this.Controls.Add(this.btnNuevaCompra);
-            this.Controls.Add(this.dgvCompras);
+            this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.picImg);
             this.Controls.Add(this.dgvUsers);
             this.Controls.Add(this.PanelHeader);
@@ -133,7 +121,6 @@
             this.PanelHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -145,7 +132,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.PictureBox picImg;
-        private System.Windows.Forms.Button btnNuevaCompra;
-        private System.Windows.Forms.DataGridView dgvCompras;
+        private System.Windows.Forms.Button btnComprar;
     }
 }

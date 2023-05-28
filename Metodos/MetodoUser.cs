@@ -17,12 +17,14 @@ namespace Metodos
             try
             
             {
-                datos.setearConsulta("Select Nombre,Apellido,Pago,Documento,FotoDePerfil,FechaDeNacimiento,Peso,Altura,Contacto from Usuarios ");
+                datos.setearConsulta("Select  Id,Nombre,Apellido,Pago,Documento,FotoDePerfil,FechaDeNacimiento,Peso,Altura,Contacto from Usuarios ");
                 datos.EjecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     Usuarios user = new Usuarios();
+
+                    user.Id = (int)datos.Lector["Id"];
                     user.Nombre = (string)datos.Lector["nombre"];
                     user.Apellido = (string)datos.Lector["Apellido"];
                     user.Pago = (bool)datos.Lector["Pago"];

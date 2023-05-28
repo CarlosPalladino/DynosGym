@@ -59,8 +59,20 @@ namespace DinosGimnasio
         {
             try
             {
+<<<<<<< HEAD
                
                 picImg.Image = Image.FromFile(imagen);
+=======
+
+                //picImg.Image = Image.FromFile(imagen);
+                //picImg.Load(imagen);
+
+                string rutaCompleta = Path.Combine(@"D:\\Escritorio\\DinosGimnasioPresentacion", imagen);
+
+                picImg.Image = Image.FromFile(rutaCompleta);
+                picImg.Load(rutaCompleta);
+
+>>>>>>> cb571ebaebf8f77b07c016398f704bf4f2c219a6
             }
             catch (Exception)
             {
@@ -80,14 +92,15 @@ namespace DinosGimnasio
         }
 
         private void dgvUsers_SelectionChanged(object sender, EventArgs e)
-
         {
+
             if (dgvUsers.CurrentRow != null)
             {
                 Usuarios seleccionado = (Usuarios)dgvUsers.CurrentRow.DataBoundItem;
                 CargarImagen(seleccionado.FotoDePerfil);
             }
         }
+<<<<<<< HEAD
 
         private void btnNuevaCompra_Click(object sender, EventArgs e)
         {
@@ -99,5 +112,7 @@ namespace DinosGimnasio
         private void dgvCompras_SelectionChanged(object sender, EventArgs e)
         {
         }
+=======
+>>>>>>> cb571ebaebf8f77b07c016398f704bf4f2c219a6
     }
 }

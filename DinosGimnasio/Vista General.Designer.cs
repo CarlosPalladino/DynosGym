@@ -76,8 +76,9 @@
             this.btnNuevaCompra.Name = "btnNuevaCompra";
             this.btnNuevaCompra.Size = new System.Drawing.Size(92, 28);
             this.btnNuevaCompra.TabIndex = 4;
-            this.btnNuevaCompra.Text = "Nuva compra";
+            this.btnNuevaCompra.Text = "Nueva compra";
             this.btnNuevaCompra.UseVisualStyleBackColor = true;
+            this.btnNuevaCompra.Click += new System.EventHandler(this.btnNuevaCompra_Click);
             // 
             // dgvUsers
             // 
@@ -112,6 +113,7 @@
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.Size = new System.Drawing.Size(833, 173);
             this.dgvCompras.TabIndex = 5;
+            this.dgvCompras.SelectionChanged += new System.EventHandler(this.dgvCompras_SelectionChanged);
             // 
             // Vista_General
             // 

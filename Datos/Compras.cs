@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public  class Compra
+    public  class Compra 
     {
         public int id { get; set; }
         public string nombre { get; set; }
         public decimal Precio { get; set; }
+
+        public int IdUsuario { get; set; }
+
+
     }
 }

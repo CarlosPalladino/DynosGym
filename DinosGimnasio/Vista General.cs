@@ -15,8 +15,8 @@ namespace DinosGimnasio
 {
     public partial class Vista_General : Form
     {
+      
 
-    //string  ruta  = "D:\Escritorio\DinosGimnasioPresentacion";
         private List<Usuarios> lista;
         private List<Compra> listacompra;
 
@@ -43,7 +43,7 @@ namespace DinosGimnasio
                 lista = metodo.lista();
                 dgvUsers.DataSource = lista;
                 CargarImagen(lista[0].FotoDePerfil);
-
+                dgvCompras.DataSource = compra;
                 listacompra = compra.lista();
                 dgvCompras.DataSource = listacompra;
                 OcultarColumnas();
@@ -59,14 +59,8 @@ namespace DinosGimnasio
         {
             try
             {
-                //string[] archivos = Directory.GetFiles(ruta, "*.jpeg");
-
-                //foreach (string archivo in archivos)
-                //{ 
-                picImg.Image = Image.FromFile(imagen)
-                    //picImg.Load(imagen);
-                    //picImagen.ImageLocation = archivo;
-                //}
+               
+                picImg.Image = Image.FromFile(imagen);
             }
             catch (Exception)
             {
@@ -81,7 +75,8 @@ namespace DinosGimnasio
         {
             dgvUsers.Columns["FotoDePerfil"].Visible = false;
             dgvUsers.Columns["Pago"].Visible = false;
-            dgvUsers.Columns["id"].Visible = false;
+            dgvUsers.Columns["Id"].Visible = false;
+                dgvUsers.Columns["IdCompra"].Visible = false;
         }
 
         private void dgvUsers_SelectionChanged(object sender, EventArgs e)
@@ -94,5 +89,15 @@ namespace DinosGimnasio
             }
         }
 
+        private void btnNuevaCompra_Click(object sender, EventArgs e)
+        {
+            CompraUsers compra = new CompraUsers();
+            compra.ShowDialog();
+
+        }
+
+        private void dgvCompras_SelectionChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

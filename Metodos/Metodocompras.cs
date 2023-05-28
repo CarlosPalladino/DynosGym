@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Datos;
@@ -9,9 +10,10 @@ namespace Metodos
 {
     public class Metodocompras
     {
+        AccesoDatos datos = new AccesoDatos();
+
         public List<Compra> lista()
         {
-            AccesoDatos datos = new AccesoDatos();
             List<Compra> lista = new List<Compra>();
             try
             {
@@ -34,9 +36,28 @@ namespace Metodos
 
                 throw ex;
             }
-
+           
 
         }
+
+        public void Nuevo(Compra compra)
+        {
+            try
+            {
+                datos.setearConsulta("Insert into Compra(nombre,Precio,IdUsuario)values(@nombre,@precio, @idUser)" );
+                datos.setearParametro("@nombre",compra.nombre);
+                datos.setearParametro("@precio", compra.Precio);
+                datos.setearParametro("@idUser",compra.IdUsuario); // igualo el usuario del dgv
+
+                datos.EjecutarLectura();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
 
 
 

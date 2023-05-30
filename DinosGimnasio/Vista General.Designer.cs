@@ -113,7 +113,6 @@
             this.dgvCompra.Name = "dgvCompra";
             this.dgvCompra.Size = new System.Drawing.Size(830, 158);
             this.dgvCompra.TabIndex = 3;
-            this.dgvCompra.SelectionChanged += new System.EventHandler(this.dgvCompra_SelectionChanged);
             // 
             // Vista_General
             // 

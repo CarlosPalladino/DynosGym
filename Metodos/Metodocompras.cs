@@ -17,11 +17,12 @@ namespace Metodos
             List<Compra> lista = new List<Compra>();
             try
             {
-                datos.setearConsulta("select C.Nombre, precio,IdUsuario from Compra C,Usuarios U where C.IdUsuario = U.id");
+                datos.setearConsulta("select C.id, C.Nombre, precio,IdUsuario from Compra C,Usuarios U where C.IdUsuario = U.id");
                 datos.EjecutarLectura();
                 while (datos.Lector.Read())
                 {
                     Compra compra = new Compra();
+                    compra.id = (int)datos.Lector["id"];
                     compra.nombre = (string)datos.Lector["nombre"];
                     compra.Precio = (decimal)datos.Lector["Precio"];
                     compra.IdUsuario = (int)datos.Lector["IdUsuario"];

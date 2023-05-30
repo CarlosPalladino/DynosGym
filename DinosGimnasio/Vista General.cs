@@ -18,7 +18,7 @@ namespace DinosGimnasio
 
 
         private List<Usuarios> lista;
-        private List<Compra> listacompra;
+        private List<Compra> listacompra = new List<Compra>();
         private int idUsuarioSeleccionado;
 
         public Vista_General()
@@ -81,29 +81,23 @@ namespace DinosGimnasio
 
         private void dgvUsers_SelectionChanged(object sender, EventArgs e)
         {
-            Compra compra = new Compra();
             if (dgvUsers.CurrentRow != null)
             {
                 Usuarios seleccionado = (Usuarios)dgvUsers.CurrentRow.DataBoundItem;
+                int idUsuarioSeleccionado = seleccionado.Id; // Suponiendo que la clase Usuarios tiene una propiedad Id que representa el ID del usuario
 
-                CargarImagen(seleccionado.FotoDePerfil);
-                //Compra seleccionadocompra = (Compra)dgvCompra.CurrentRow.DataBoundItem;
-                
-                
-                // Obtener la compra seleccionada en el DataGridView de compras
-                                                                                        //if (dgvCompra.CurrentRow != null)
-                                                                                        //{
-                                                                                        //    if ( seleccionado.Id == seleccionadocompra.IdUsuario )
-                                                                                        //    {
-                                                                                        //        dgvCompra.DataSource = seleccionadocompra;
-                                                                                        //    }
+                List<Compra> comprasFiltradas = new List<Compra>();
+
+                foreach (Compra compra in listacompra)
+                {
+                    if (compra.IdUsuario == idUsuarioSeleccionado)
+                    {
+                        comprasFiltradas.Add(compra);
+                    }
+                }
+
+                dgvCompra.DataSource = comprasFiltradas;
             }
-
-
-
-
-
-
         }
         private void btnComprar_Click(object sender, EventArgs e)
         {
@@ -117,37 +111,17 @@ namespace DinosGimnasio
 
             }
         }
-        private void dgvCompra_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvCompra.CurrentRow != null)
-            {
-                Usuarios user = (Usuarios)dgvUsers.CurrentRow.DataBoundItem; // Obtener el usuario seleccionado en el DataGridView de usuarios
-                Compra seleccionado = (Compra)dgvCompra.CurrentRow.DataBoundItem; // Obtener la compra seleccionada en el DataGridView de compras
-
-                // Verificar si el ID de usuario de la compra coincide con el ID del usuario seleccionado
-                //if (seleccionado.IdUsuario == user.Id)
-                //{
-                //    dgvCompra.DataSource = seleccionado;
-                //}
+     
 
 
 
 
 
-
-
-            }
-
-
-
-
-
-
-
-
-        }
     }
+
 }
+
+
 
 
 

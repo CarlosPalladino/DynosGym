@@ -34,9 +34,11 @@
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.picImg = new System.Windows.Forms.PictureBox();
             this.btnComprar = new System.Windows.Forms.Button();
+            this.dgvCompra = new System.Windows.Forms.DataGridView();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -96,7 +98,7 @@
             // 
             // btnComprar
             // 
-            this.btnComprar.Location = new System.Drawing.Point(879, 550);
+            this.btnComprar.Location = new System.Drawing.Point(878, 545);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(123, 32);
             this.btnComprar.TabIndex = 2;
@@ -104,12 +106,22 @@
             this.btnComprar.UseVisualStyleBackColor = true;
             this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
+            // dgvCompra
+            // 
+            this.dgvCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompra.Location = new System.Drawing.Point(-1, 534);
+            this.dgvCompra.Name = "dgvCompra";
+            this.dgvCompra.Size = new System.Drawing.Size(830, 158);
+            this.dgvCompra.TabIndex = 3;
+            this.dgvCompra.SelectionChanged += new System.EventHandler(this.dgvCompra_SelectionChanged);
+            // 
             // Vista_General
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1231, 713);
+            this.Controls.Add(this.dgvCompra);
             this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.picImg);
             this.Controls.Add(this.dgvUsers);
@@ -121,6 +133,7 @@
             this.PanelHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -133,5 +146,6 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.PictureBox picImg;
         private System.Windows.Forms.Button btnComprar;
+        private System.Windows.Forms.DataGridView dgvCompra;
     }
 }

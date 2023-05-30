@@ -99,7 +99,7 @@
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtNombre);
             this.Name = "CompraUsers";
-            this.Text = "CompraUsers";
+            this.Text = "  ";
             this.Load += new System.EventHandler(this.CompraUsers_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

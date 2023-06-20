@@ -10,14 +10,15 @@ namespace Metodos
     public class MetodoUser
     {
 
-        public AccesoDatos datos = new AccesoDatos();   
+        public AccesoDatos datos = new AccesoDatos();
         public List<Usuarios> lista()
         {
             List<Usuarios> lista = new List<Usuarios>();
+
             try
-            
+
             {
-                datos.setearConsulta("Select  Id,Nombre,Apellido,Pago,Documento,FotoDePerfil,FechaDeNacimiento,Peso,Altura,Contacto from Usuarios ");
+                datos.setearConsulta("Select U.Id,U.Nombre,Apellido,Pago,Documento,FotoDePerfil,FechaDeNacimiento,Peso,Altura,Contacto,T.Nombre Membresia  from Usuarios U,Membresia M ,TipoMembresia T");
                 datos.EjecutarLectura();
 
                 while (datos.Lector.Read())
@@ -27,23 +28,27 @@ namespace Metodos
                     user.Id = (int)datos.Lector["Id"];
                     user.Nombre = (string)datos.Lector["nombre"];
                     user.Apellido = (string)datos.Lector["Apellido"];
+
+
+
+
                     user.Pago = (bool)datos.Lector["Pago"];
                     user.Documento = (long)datos.Lector["Documento"];
-                    if(!(datos.Lector["FotoDePerfil"] is DBNull))
-                    user.FotoDePerfil = (string)datos.Lector["FotoDePerfil"];
+                    if (!(datos.Lector["FotoDePerfil"] is DBNull))
+                        user.FotoDePerfil = (string)datos.Lector["FotoDePerfil"];
 
                     user.FechaDeNacimiento = (DateTime)datos.Lector["FechaDeNacimiento"];
                     user.Peso = (int)datos.Lector["Peso"];
                     user.Altura = (decimal)datos.Lector["Altura"];
                     user.Contacto = (long)datos.Lector["Contacto"];
 
+                    user.TiposMembresia = new TipoMembresia();
+                    user.TiposMembresia.Nombre = (string)datos.Lector["Membresia"];
 
-
-
-                    lista.Add(user);
+                  
                 }
 
-
+                datos.CerrarLectura();
                 return lista;
             }
             catch (Exception ex)
@@ -53,13 +58,13 @@ namespace Metodos
             }
         }
 
-       public void Nuevo(Usuarios user)
-       {
+        public void Nuevo(Usuarios user)
+        {
 
-           try
-           {
-               datos.setearConsulta("insert into Usuarios( Nombre,Apellido,Pago,Documento,FotoDePerfil,FechaDeNacimiento,Peso,Altura,Contacto)Values(@nombre,@apellido,@pago,@doc,@foto,@fecha,@peso,@altura,@contacto)");
-               datos.setearParametro("@nombre",user.Nombre);
+            try
+            {
+                datos.setearConsulta("insert into Usuarios( Nombre,Apellido,Pago,Documento,FotoDePerfil,FechaDeNacimiento,Peso,Altura,Contacto)Values(@nombre,@apellido,@pago,@doc,@foto,@fecha,@peso,@altura,@contacto)");
+                datos.setearParametro("@nombre", user.Nombre);
                 datos.setearParametro("@apellido", user.Apellido);
                 datos.setearParametro("@pago", user.Pago);
                 datos.setearParametro("@doc", user.Documento);
@@ -70,14 +75,14 @@ namespace Metodos
                 datos.setearParametro("@contacto", user.Contacto);
 
                 datos.EjecutarLectura();
-                
-           }
-           catch (Exception ex)
-           {
 
-               throw ex;
-           }
-       }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
         public void Modificar(Usuarios modi)
         {

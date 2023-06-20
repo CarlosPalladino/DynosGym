@@ -20,6 +20,7 @@ namespace DinosGimnasio
         private List<Usuarios> lista;
         private List<Compra> listacompra = new List<Compra>();
         private int idUsuarioSeleccionado;
+        Metodocompras compra = new Metodocompras();
 
         public Vista_General()
         {
@@ -45,7 +46,7 @@ namespace DinosGimnasio
                 lista = metodo.lista();
                 dgvUsers.DataSource = lista;
                 listacompra = compra.lista();
-                dgvCompra.DataSource = listacompra;
+                //CrgarDatos()
                 CargarImagen(lista[0].FotoDePerfil);
                 OcultarColumnas();
             }
@@ -68,7 +69,7 @@ namespace DinosGimnasio
             {
 
                 {
-                    picImg.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoNaLFFSdD4YhW8mqgDBSWY8nHnte6ANHQWz6Lsl37yA&s");
+                    picImg.Load("https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-portrait-176256935.jpg");
 
                 }
             }
@@ -77,26 +78,41 @@ namespace DinosGimnasio
         {
             dgvUsers.Columns["FotoDePerfil"].Visible = false;
             dgvUsers.Columns["Pago"].Visible = false;
+            dgvUsers.Columns["Id"].Visible = false;
+            dgvCompra.Columns["id"].Visible = false;
+            dgvCompra.Columns["idUsuario"].Visible = false;
+
         }
 
         private void dgvUsers_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvUsers.CurrentRow != null)
+
+            try
             {
-                Usuarios seleccionado = (Usuarios)dgvUsers.CurrentRow.DataBoundItem;
-                int idUsuarioSeleccionado = seleccionado.Id; // Suponiendo que la clase Usuarios tiene una propiedad Id que representa el ID del usuario
-
-                List<Compra> comprasFiltradas = new List<Compra>();
-
-                foreach (Compra compra in listacompra)
+                if (dgvUsers.CurrentRow != null)
                 {
-                    if (compra.IdUsuario == idUsuarioSeleccionado)
-                    {
-                        comprasFiltradas.Add(compra);
-                    }
-                }
+                    Usuarios seleccionado = (Usuarios)dgvUsers.CurrentRow.DataBoundItem;
+                    CargarImagen(seleccionado.FotoDePerfil);
+                    //CargarDatos();
+                    int idUsuarioSeleccionado = seleccionado.Id; // Suponiendo que la clase Usuarios tiene una propiedad Id que representa el ID del usuario
 
-                dgvCompra.DataSource = comprasFiltradas;
+                    List<Compra> comprasFiltradas = new List<Compra>();
+
+                    foreach (Compra compra in listacompra)
+                    {
+                        if (compra.IdUsuario == idUsuarioSeleccionado)
+                        {
+                            comprasFiltradas.Add(compra);
+                        }
+                    }
+
+                    dgvCompra.DataSource = comprasFiltradas;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
         private void btnComprar_Click(object sender, EventArgs e)
@@ -111,12 +127,27 @@ namespace DinosGimnasio
 
             }
         }
-     
 
+        private void btnMembresia_Click(object sender, EventArgs e)
+        {
+            if (dgvUsers.CurrentRow != null)
+            {
+                Usuarios seleccionado = (Usuarios)dgvUsers.CurrentRow.DataBoundItem;
+                AltaMembresia alta = new AltaMembresia(seleccionado);
+                alta.ShowDialog();
 
+            }
+        }
 
-
-
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            if(dgvUsers.CurrentRow != null)
+            {
+                Usuarios seleccionado = (Usuarios)dgvUsers.CurrentRow.DataBoundItem;
+                DetalleCliente detalle = new DetalleCliente(seleccionado);
+                detalle.ShowDialog();
+            }
+        }
     }
 
 }

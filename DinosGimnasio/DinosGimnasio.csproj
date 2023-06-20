@@ -56,11 +56,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaMembresia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaMembresia.Designer.cs">
+      <DependentUpon>AltaMembresia.cs</DependentUpon>
+    </Compile>
     <Compile Include="CompraUsers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CompraUsers.Designer.cs">
       <DependentUpon>CompraUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetalleCliente.Designer.cs">
+      <DependentUpon>DetalleCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -82,8 +94,14 @@
     <Compile Include="Vista General.Designer.cs">
       <DependentUpon>Vista General.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AltaMembresia.resx">
+      <DependentUpon>AltaMembresia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CompraUsers.resx">
       <DependentUpon>CompraUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetalleCliente.resx">
+      <DependentUpon>DetalleCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

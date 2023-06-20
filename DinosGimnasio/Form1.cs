@@ -22,7 +22,7 @@ namespace DinosGimnasio
         private void BtnLogin_Click(object sender, EventArgs e)
         {
 
-            AdminMetodos metodo = new AdminMetodos();
+            AdminMetodos metodo = new AdminMetodos(); 
             try
             {
                 Admin user = new Admin();

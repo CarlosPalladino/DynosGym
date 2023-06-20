@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class Usuarios 
+    public class Usuarios
     {
 
         public int Id { get; set; }
@@ -20,7 +21,8 @@ namespace Datos
         public int Peso { get; set; }
         public long Contacto { get; set; }
 
+        public TipoMembresia TiposMembresia { get; set; }
 
-
+        public Membresia Membresias { get; set; }
     }
 }

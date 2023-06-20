@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.PanelHeader = new System.Windows.Forms.Panel();
+            this.btnDetalle = new System.Windows.Forms.Button();
+            this.btnMembresia = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.lblFiltro = new System.Windows.Forms.Label();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
@@ -44,12 +49,62 @@
             // PanelHeader
             // 
             this.PanelHeader.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.PanelHeader.Controls.Add(this.btnDetalle);
+            this.PanelHeader.Controls.Add(this.btnMembresia);
+            this.PanelHeader.Controls.Add(this.btnReset);
+            this.PanelHeader.Controls.Add(this.lblFiltro);
+            this.PanelHeader.Controls.Add(this.txtFiltro);
             this.PanelHeader.Controls.Add(this.btnModificar);
             this.PanelHeader.Controls.Add(this.btnNuevo);
             this.PanelHeader.Location = new System.Drawing.Point(-1, 1);
             this.PanelHeader.Name = "PanelHeader";
             this.PanelHeader.Size = new System.Drawing.Size(1231, 111);
             this.PanelHeader.TabIndex = 0;
+            // 
+            // btnDetalle
+            // 
+            this.btnDetalle.Location = new System.Drawing.Point(991, 30);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(110, 33);
+            this.btnDetalle.TabIndex = 6;
+            this.btnDetalle.Text = "Detalle";
+            this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
+            // 
+            // btnMembresia
+            // 
+            this.btnMembresia.Location = new System.Drawing.Point(790, 29);
+            this.btnMembresia.Name = "btnMembresia";
+            this.btnMembresia.Size = new System.Drawing.Size(123, 32);
+            this.btnMembresia.TabIndex = 5;
+            this.btnMembresia.Text = " Agregar Membresia";
+            this.btnMembresia.UseVisualStyleBackColor = true;
+            this.btnMembresia.Click += new System.EventHandler(this.btnMembresia_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(626, 34);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 4;
+            this.btnReset.Text = "Cancelar";
+            this.btnReset.UseVisualStyleBackColor = true;
+            // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Location = new System.Drawing.Point(387, 44);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(40, 13);
+            this.lblFiltro.TabIndex = 3;
+            this.lblFiltro.Text = "Buscar";
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(451, 38);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(169, 20);
+            this.txtFiltro.TabIndex = 2;
             // 
             // btnModificar
             // 
@@ -72,6 +127,7 @@
             // 
             // dgvUsers
             // 
+            this.dgvUsers.AllowUserToDeleteRows = false;
             this.dgvUsers.AllowUserToOrderColumns = true;
             this.dgvUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -93,6 +149,7 @@
             this.picImg.Location = new System.Drawing.Point(835, 118);
             this.picImg.Name = "picImg";
             this.picImg.Size = new System.Drawing.Size(384, 392);
+            this.picImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImg.TabIndex = 2;
             this.picImg.TabStop = false;
             // 
@@ -118,7 +175,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1231, 713);
             this.Controls.Add(this.dgvCompra);
             this.Controls.Add(this.btnComprar);
@@ -130,6 +186,7 @@
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Vista_General_Load);
             this.PanelHeader.ResumeLayout(false);
+            this.PanelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).EndInit();
@@ -146,5 +203,10 @@
         private System.Windows.Forms.PictureBox picImg;
         private System.Windows.Forms.Button btnComprar;
         private System.Windows.Forms.DataGridView dgvCompra;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.Button btnMembresia;
+        private System.Windows.Forms.Button btnDetalle;
     }
 }

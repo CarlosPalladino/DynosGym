@@ -20,6 +20,7 @@ namespace DinosGimnasio
 
 
     {
+        private Usuarios _user = null;
 
         private string nombreImagenCapturada = "";
 
@@ -33,11 +34,28 @@ namespace DinosGimnasio
         {
             InitializeComponent();
         }
-
+        public Registro(Usuarios usuarios)
+        {
+            InitializeComponent();
+            _user = usuarios;
+        }
 
         private void Registro_Load(object sender, EventArgs e)
         {
             CargarDispositivo();
+            if(_user != null)
+            {
+                txtNombre.Text = _user.Nombre.ToString();
+                txtApelido.Text = _user.Apellido.ToString();    
+                txtAltura.Text = _user.Altura.ToString();
+                txtContacto.Text = _user.Contacto.ToString();
+                txtDni.Text = _user.Documento.ToString();
+                txtPeso.Text = _user.Peso.ToString();
+                dtpFecha.Value = _user.FechaDeNacimiento;
+                cargarImagen(_user.FotoDePerfil);
+
+
+            }
         }
 
         public void CargarDispositivo()

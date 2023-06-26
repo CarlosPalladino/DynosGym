@@ -17,7 +17,7 @@ namespace Metodos
             List<Usuarios> lista = new List<Usuarios>();
             try
             {
-                datos.setearConsulta("");
+                datos.setearConsulta("select FechaDeIncio,FechaD");
                 datos.EjecutarLectura();
 
 
@@ -32,7 +32,7 @@ namespace Metodos
 
 
                 }
-
+                return lista;
 
             }
             catch (Exception ex)

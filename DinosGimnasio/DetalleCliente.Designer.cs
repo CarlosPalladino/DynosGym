@@ -30,7 +30,7 @@
         {
             this.picPerdfil = new System.Windows.Forms.PictureBox();
             this.btnAtrás = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnModi = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblContacto = new System.Windows.Forms.Label();
@@ -41,6 +41,7 @@
             this.lblMembresia = new System.Windows.Forms.Label();
             this.dateTimeFin = new System.Windows.Forms.DateTimePicker();
             this.DateTimeIncio = new System.Windows.Forms.DateTimePicker();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picPerdfil)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,26 +50,28 @@
             this.picPerdfil.Location = new System.Drawing.Point(505, 94);
             this.picPerdfil.Name = "picPerdfil";
             this.picPerdfil.Size = new System.Drawing.Size(209, 214);
+            this.picPerdfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPerdfil.TabIndex = 0;
             this.picPerdfil.TabStop = false;
             // 
             // btnAtrás
             // 
-            this.btnAtrás.Location = new System.Drawing.Point(238, 405);
+            this.btnAtrás.Location = new System.Drawing.Point(20, 12);
             this.btnAtrás.Name = "btnAtrás";
             this.btnAtrás.Size = new System.Drawing.Size(75, 23);
             this.btnAtrás.TabIndex = 7;
             this.btnAtrás.Text = "Atrás";
             this.btnAtrás.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnModi
             // 
-            this.button2.Location = new System.Drawing.Point(418, 405);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Modficar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnModi.Location = new System.Drawing.Point(418, 405);
+            this.btnModi.Name = "btnModi";
+            this.btnModi.Size = new System.Drawing.Size(75, 23);
+            this.btnModi.TabIndex = 8;
+            this.btnModi.Text = "Modficar";
+            this.btnModi.UseVisualStyleBackColor = true;
+            this.btnModi.Click += new System.EventHandler(this.button2_Click);
             // 
             // lblNombre
             // 
@@ -82,7 +85,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(60, 183);
+            this.lblApellido.Location = new System.Drawing.Point(60, 204);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(35, 13);
             this.lblApellido.TabIndex = 10;
@@ -100,7 +103,7 @@
             // lblPeso
             // 
             this.lblPeso.AutoSize = true;
-            this.lblPeso.Location = new System.Drawing.Point(147, 183);
+            this.lblPeso.Location = new System.Drawing.Point(147, 204);
             this.lblPeso.Name = "lblPeso";
             this.lblPeso.Size = new System.Drawing.Size(35, 13);
             this.lblPeso.TabIndex = 12;
@@ -109,7 +112,7 @@
             // lblDocumento
             // 
             this.lblDocumento.AutoSize = true;
-            this.lblDocumento.Location = new System.Drawing.Point(228, 130);
+            this.lblDocumento.Location = new System.Drawing.Point(237, 130);
             this.lblDocumento.Name = "lblDocumento";
             this.lblDocumento.Size = new System.Drawing.Size(35, 13);
             this.lblDocumento.TabIndex = 13;
@@ -118,7 +121,7 @@
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(237, 183);
+            this.lblNumero.Location = new System.Drawing.Point(237, 204);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(35, 13);
             this.lblNumero.TabIndex = 14;
@@ -136,7 +139,7 @@
             // lblMembresia
             // 
             this.lblMembresia.AutoSize = true;
-            this.lblMembresia.Location = new System.Drawing.Point(341, 183);
+            this.lblMembresia.Location = new System.Drawing.Point(341, 204);
             this.lblMembresia.Name = "lblMembresia";
             this.lblMembresia.Size = new System.Drawing.Size(35, 13);
             this.lblMembresia.TabIndex = 16;
@@ -144,26 +147,35 @@
             // 
             // dateTimeFin
             // 
-            this.dateTimeFin.Location = new System.Drawing.Point(238, 288);
+            this.dateTimeFin.Location = new System.Drawing.Point(238, 271);
             this.dateTimeFin.Name = "dateTimeFin";
             this.dateTimeFin.Size = new System.Drawing.Size(200, 20);
             this.dateTimeFin.TabIndex = 17;
-            this.dateTimeFin.ValueChanged += new System.EventHandler(this.dateTimeFin_ValueChanged);
             // 
             // DateTimeIncio
             // 
-            this.DateTimeIncio.Location = new System.Drawing.Point(12, 288);
+            this.DateTimeIncio.Location = new System.Drawing.Point(12, 271);
             this.DateTimeIncio.MinDate = new System.DateTime(1964, 6, 10, 0, 0, 0, 0);
             this.DateTimeIncio.Name = "DateTimeIncio";
             this.DateTimeIncio.Size = new System.Drawing.Size(200, 20);
             this.DateTimeIncio.TabIndex = 18;
-            this.DateTimeIncio.ValueChanged += new System.EventHandler(this.DateTimeIncio_ValueChanged);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(301, 405);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 19;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // DetalleCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.DateTimeIncio);
             this.Controls.Add(this.dateTimeFin);
             this.Controls.Add(this.lblMembresia);
@@ -174,7 +186,7 @@
             this.Controls.Add(this.lblContacto);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnModi);
             this.Controls.Add(this.btnAtrás);
             this.Controls.Add(this.picPerdfil);
             this.Name = "DetalleCliente";
@@ -191,7 +203,7 @@
 
         private System.Windows.Forms.PictureBox picPerdfil;
         private System.Windows.Forms.Button btnAtrás;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnModi;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblContacto;
@@ -202,5 +214,6 @@
         private System.Windows.Forms.Label lblMembresia;
         private System.Windows.Forms.DateTimePicker dateTimeFin;
         private System.Windows.Forms.DateTimePicker DateTimeIncio;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

@@ -22,7 +22,7 @@ namespace DinosGimnasio
         private void BtnLogin_Click(object sender, EventArgs e)
         {
 
-            AdminMetodos metodo = new AdminMetodos(); 
+            AdminMetodos metodo = new AdminMetodos();
             try
             {
                 Admin user = new Admin();
@@ -30,14 +30,14 @@ namespace DinosGimnasio
                 user.Password = txtPass.Text;
                 if (metodo.Login(user))
                 {
-                Vista_General vista = new Vista_General();
-                vista.ShowDialog();
-              }
-              else
-              {
-                  MessageBox.Show("Llena todos los campos ", "Error", MessageBoxButtons.OK);
+                    Vista_General vista = new Vista_General();
+                    vista.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Llena todos los campos ", "Error", MessageBoxButtons.OK);
 
-              }
+                }
 
             }
             catch (Exception)
@@ -48,8 +48,9 @@ namespace DinosGimnasio
 
         }
 
+        private void MenuIngreso_Load(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 }

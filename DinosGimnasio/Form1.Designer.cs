@@ -115,6 +115,7 @@
             this.Name = "MenuIngreso";
             this.Padding = new System.Windows.Forms.Padding(7);
             this.Text = "Menu Principal";
+            this.Load += new System.EventHandler(this.MenuIngreso_Load);
             this.PanelMenu.ResumeLayout(false);
             this.PanelMenu.PerformLayout();
             this.ResumeLayout(false);

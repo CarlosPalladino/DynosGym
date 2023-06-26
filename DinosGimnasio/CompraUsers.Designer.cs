@@ -38,21 +38,21 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(267, 92);
+            this.txtNombre.Location = new System.Drawing.Point(290, 131);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(113, 20);
             this.txtNombre.TabIndex = 0;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(267, 155);
+            this.txtPrecio.Location = new System.Drawing.Point(290, 194);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(113, 20);
             this.txtPrecio.TabIndex = 1;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(327, 298);
+            this.btnAceptar.Location = new System.Drawing.Point(388, 311);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(96, 40);
             this.btnAceptar.TabIndex = 2;
@@ -62,7 +62,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(175, 298);
+            this.btnReset.Location = new System.Drawing.Point(236, 311);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(96, 40);
             this.btnReset.TabIndex = 3;
@@ -72,7 +72,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(180, 96);
+            this.lblNombre.Location = new System.Drawing.Point(203, 135);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(42, 13);
             this.lblNombre.TabIndex = 4;
@@ -81,7 +81,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(180, 158);
+            this.lblPrecio.Location = new System.Drawing.Point(203, 197);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(37, 13);
             this.lblPrecio.TabIndex = 5;

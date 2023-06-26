@@ -26,6 +26,7 @@ namespace Metodos
                     compra.nombre = (string)datos.Lector["nombre"];
                     compra.Precio = (decimal)datos.Lector["Precio"];
                     compra.IdUsuario = (int)datos.Lector["IdUsuario"];
+
                     lista.Add(compra);
                 }
 

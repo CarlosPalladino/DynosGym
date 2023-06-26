@@ -46,7 +46,6 @@ namespace DinosGimnasio
                 lista = metodo.lista();
                 dgvUsers.DataSource = lista;
                 listacompra = compra.lista();
-                //CrgarDatos()
                 CargarImagen(lista[0].FotoDePerfil);
                 OcultarColumnas();
             }
@@ -61,9 +60,7 @@ namespace DinosGimnasio
         {
             try
             {
-
                 picImg.Image = Image.FromFile(imagen);
-
             }
             catch (Exception)
             {
@@ -78,6 +75,7 @@ namespace DinosGimnasio
         {
             dgvUsers.Columns["FotoDePerfil"].Visible = false;
             dgvUsers.Columns["Pago"].Visible = false;
+            dgvUsers.Columns["Membresias"].Visible = false;
             dgvUsers.Columns["Id"].Visible = false;
             dgvCompra.Columns["id"].Visible = false;
             dgvCompra.Columns["idUsuario"].Visible = false;
@@ -141,12 +139,33 @@ namespace DinosGimnasio
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            if(dgvUsers.CurrentRow != null)
+            if (dgvUsers.CurrentRow != null)
             {
                 Usuarios seleccionado = (Usuarios)dgvUsers.CurrentRow.DataBoundItem;
                 DetalleCliente detalle = new DetalleCliente(seleccionado);
                 detalle.ShowDialog();
             }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvUsers.CurrentRow != null)
+            {
+                Usuarios seleccionado = (Usuarios)dgvUsers.CurrentRow.DataBoundItem;
+                Registro registro = new Registro(seleccionado);
+                registro.ShowDialog();
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+           txtFiltro.ResetText();
+        }
+
+        private void btnAcceso_Click(object sender, EventArgs e)
+        {
+            AccesoUsers user = new AccesoUsers();
+            user.Show();
         }
     }
 

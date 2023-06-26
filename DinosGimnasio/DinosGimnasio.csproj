@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccesoUsers.Designer.cs">
+      <DependentUpon>AccesoUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="AltaMembresia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     <Compile Include="Vista General.Designer.cs">
       <DependentUpon>Vista General.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AccesoUsers.resx">
+      <DependentUpon>AccesoUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AltaMembresia.resx">
       <DependentUpon>AltaMembresia.cs</DependentUpon>
     </EmbeddedResource>

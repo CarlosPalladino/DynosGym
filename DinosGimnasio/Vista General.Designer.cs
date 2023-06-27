@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.PanelHeader = new System.Windows.Forms.Panel();
+            this.btnAcceso = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.btnMembresia = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.picImg = new System.Windows.Forms.PictureBox();
             this.btnComprar = new System.Windows.Forms.Button();
             this.dgvCompra = new System.Windows.Forms.DataGridView();
-            this.btnAcceso = new System.Windows.Forms.Button();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImg)).BeginInit();
@@ -62,6 +62,16 @@
             this.PanelHeader.Name = "PanelHeader";
             this.PanelHeader.Size = new System.Drawing.Size(1231, 111);
             this.PanelHeader.TabIndex = 0;
+            // 
+            // btnAcceso
+            // 
+            this.btnAcceso.Location = new System.Drawing.Point(1082, 29);
+            this.btnAcceso.Name = "btnAcceso";
+            this.btnAcceso.Size = new System.Drawing.Size(110, 33);
+            this.btnAcceso.TabIndex = 7;
+            this.btnAcceso.Text = "Acceso";
+            this.btnAcceso.UseVisualStyleBackColor = true;
+            this.btnAcceso.Click += new System.EventHandler(this.btnAcceso_Click);
             // 
             // btnDetalle
             // 
@@ -108,6 +118,7 @@
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(169, 20);
             this.txtFiltro.TabIndex = 2;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // btnModificar
             // 
@@ -174,16 +185,6 @@
             this.dgvCompra.Name = "dgvCompra";
             this.dgvCompra.Size = new System.Drawing.Size(830, 158);
             this.dgvCompra.TabIndex = 3;
-            // 
-            // btnAcceso
-            // 
-            this.btnAcceso.Location = new System.Drawing.Point(1082, 29);
-            this.btnAcceso.Name = "btnAcceso";
-            this.btnAcceso.Size = new System.Drawing.Size(110, 33);
-            this.btnAcceso.TabIndex = 7;
-            this.btnAcceso.Text = "Acceso";
-            this.btnAcceso.UseVisualStyleBackColor = true;
-            this.btnAcceso.Click += new System.EventHandler(this.btnAcceso_Click);
             // 
             // Vista_General
             // 

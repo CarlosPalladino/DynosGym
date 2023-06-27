@@ -106,6 +106,7 @@ namespace Metodos
                     user.TiposMembresia.Nombre = (string)datos.Lector["Membresia"];
 
                     user.Documento = (long)datos.Lector["documento"];
+
                     return true;
                 }
 

@@ -159,7 +159,7 @@ namespace DinosGimnasio
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-           txtFiltro.ResetText();
+            txtFiltro.ResetText();
         }
 
         private void btnAcceso_Click(object sender, EventArgs e)
@@ -167,9 +167,28 @@ namespace DinosGimnasio
             AccesoUsers user = new AccesoUsers();
             user.Show();
         }
-    }
 
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            List<Usuarios> user;
+            string filtro = txtFiltro.Text;
+            if (filtro.Length > 2)
+            {
+                user = lista.FindAll(u => u.Nombre.ToUpper().Contains(filtro.ToUpper()) || u.Apellido.ToUpper().Contains(filtro.ToUpper()));
+
+            }
+            else
+            {
+                user = lista;
+            }
+
+            dgvUsers.DataSource = null;
+            dgvUsers.DataSource = user;
+        }
+
+    }
 }
+
 
 
 

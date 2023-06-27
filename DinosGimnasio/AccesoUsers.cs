@@ -22,10 +22,6 @@ namespace DinosGimnasio
 
         }
 
-        private void dateTimePicker1_VisibleChanged(object sender, EventArgs e)
-        {
-        
-        }
 
         private void AccesoUsers_Load(object sender, EventArgs e)
         {
@@ -35,20 +31,26 @@ namespace DinosGimnasio
         private void btnIngrsar_Click(object sender, EventArgs e)
         {
             MetodoUser metodo = new MetodoUser();
-            Usuarios _user = new Usuarios();
             try
             {
                 Usuarios user = new Usuarios();
                 user.Documento = long.Parse(txtDocu.Text);
                 if (metodo.AccesoUser(user))
                 {
-                    lblNombre.Text = _user.Nombre;
-                    LblApellido.Text = _user.Apellido;
+                    lblNombre.Text = user.Nombre;
+                    lblApellido.Text = user.Apellido;
                     //lblTipoMembresia.Text = _user.TiposMembresia.Nombre.ToString();
                     CargarImagen(picImg.ImageLocation);
 
                     SoundPlayer soundPlayer = new SoundPlayer();
-                    soundPlayer.SoundLocation = "C:/Users/Carlos/Desktop/DinosGimnasioPresentacion/check.mp´3";
+                    soundPlayer.SoundLocation = "C:/Users/Carlos/Desktop/DinosGimnasioPresentacion/check.wav";
+                    soundPlayer.Play();
+                }
+
+                else
+                {
+                    SoundPlayer soundPlayer = new SoundPlayer();
+                    soundPlayer.SoundLocation = "C:/Users/Carlos/Desktop/DinosGimnasioPresentacion/check.wav";
                     soundPlayer.Play();
                 }
 

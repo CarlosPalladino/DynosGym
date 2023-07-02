@@ -43,15 +43,30 @@ namespace Metodos
         }
 
 
-        public void InsertarMembresia(Membresia membresia)
+        public void InsertarMembresia(Membresia membresia, TipoMembresia tipo)
         {
             try
             {
-                datos.setearConsulta("insert into Membresia(FechaDeInicio,FechaDeFin,IdTipoMembresia,IdUsuarios)Values(@inicio ,@fin, @membresia),@user");
+                datos.setearConsulta("INSERT INTO Membresia (FechaDeInicio, FechaDeFin, IdTipoMembresia, IdUsuarios) " +
+                              "VALUES (@inicio, @fin, @membresia, @user)");
+
                 datos.setearParametro("@inicio", membresia.FechaDeIncio);
                 datos.setearParametro("@fin", membresia.FechaDeFin);
                 datos.setearParametro("@membresia", membresia.IdTipoMembresia);
+                datos.setearParametro("@user", membresia.IdUsuarios);
+
                 datos.ejecutarAccion();
+                datos.CerrarLectura();
+
+                // Insertar en la tabla TipoMembresia
+                datos.setearConsulta("INSERT INTO TipoMembresia (Nombre,Precio) " +
+                                      "VALUES (@nombre,@precio)");
+
+                datos.setearParametro("@nombre", tipo.Nombre);
+                datos.setearParametro("@precio", tipo.Precio);
+
+                datos.ejecutarAccion();
+                datos.CerrarLectura();
 
             }
             catch (Exception ex)
@@ -59,8 +74,30 @@ namespace Metodos
 
                 throw ex;
             }
-        }
+            finally
+            {
+                datos.CerrarLectura();
 
+            }
+        }
+        public void ActualizarMembresia(Membresia membresia)
+        {
+
+            try
+            {
+                datos.setearConsulta("Update Membresia Set idTipoMembresia = @membresia, FechaDeIncio = @inicio,FechaDeFin =@fin, Activo = @activo");
+                datos.setearParametro("@membresia", membresia.IdTipoMembresia);
+                datos.setearParametro("@inicio", membresia.FechaDeIncio);
+                datos.setearParametro("@fin", membresia.FechaDeFin);
+                datos.setearParametro("@activo", membresia.Activo);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
     }
 }

@@ -18,15 +18,14 @@ namespace Metodos
             try
 
             {
-                datos.setearConsulta("Select U.Id,U.Nombre,Apellido,Pago,Documento,FotoDePerfil,FechaDeNacimiento,Peso,Altura,Contacto,T.Nombre Membresia, M.FechaDeInicio,M.FechaDeFin  from Usuarios U,Membresia M ,TipoMembresia T  ");
+                datos.setearConsulta("SELECT u.Id, u.Nombre, u.Apellido, u.Pago, u.Documento, u.FotoDePerfil, u.FechaDeNacimiento, u.Peso, u.Altura, u.Contacto,\r\n       m.FechaDeInicio, m.FechaDeFin,\r\n       t.Precio, t.Nombre AS NombreMembresia\r\nFROM Usuarios u\r\nJOIN Membresia m ON u.Id = m.IdUsuarios\r\nJOIN TipoMembresia t ON m.IdTipoMembresia = t.Id\r\n");
                 datos.EjecutarLectura();
-
                 while (datos.Lector.Read())
                 {
                     Usuarios user = new Usuarios();
 
                     user.Id = (int)datos.Lector["Id"];
-                    user.Nombre = (string)datos.Lector["nombre"];
+                    user.Nombre = (string)datos.Lector["Nombre"];
                     user.Apellido = (string)datos.Lector["Apellido"];
 
                     user.Pago = (bool)datos.Lector["Pago"];
@@ -38,13 +37,6 @@ namespace Metodos
                     user.Peso = (int)datos.Lector["Peso"];
                     user.Altura = (decimal)datos.Lector["Altura"];
                     user.Contacto = (long)datos.Lector["Contacto"];
-
-                    user.Membresias = new Membresia();
-                    user.Membresias.FechaDeIncio = (DateTime)datos.Lector["FechaDeInicio"];
-                    user.Membresias.FechaDeFin = (DateTime)datos.Lector["FechaDeFin"];
-
-                    user.TiposMembresia = new TipoMembresia();
-                    user.TiposMembresia.Nombre = (string)datos.Lector["Membresia"];
 
                     lista.Add(user);
                 }
@@ -93,7 +85,7 @@ namespace Metodos
         {
             try
             {
-                datos.setearConsulta("select U.Nombre  ,Apellido ,T.Nombre Membresia, documento from Usuarios U,TipoMembresia  T where documento=@docu");
+                datos.setearConsulta("select U.Nombre  ,Apellido ,T.Nombre Membresia, documento,FotoDePerfil from Usuarios U,TipoMembresia  T where documento=@docu");
                 datos.setearParametro("@docu", user.Documento);
 
                 datos.EjecutarLectura();
@@ -106,7 +98,8 @@ namespace Metodos
                     user.TiposMembresia.Nombre = (string)datos.Lector["Membresia"];
 
                     user.Documento = (long)datos.Lector["documento"];
-
+                    if (!(datos.Lector["FotoDePerfil"] is DBNull))
+                        user.FotoDePerfil = (string)datos.Lector["FotoDePerfil"];
                     return true;
                 }
 
@@ -124,8 +117,9 @@ namespace Metodos
         {
             try
             {
-                datos.setearConsulta("update Usuarios set ");
-
+                datos.setearConsulta("update Usuarios set Peso =@peso");
+                datos.setearParametro("peso", modi.Peso);
+                datos.ejecutarAccion();
             }
             catch (Exception ex)
             {

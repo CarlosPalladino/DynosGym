@@ -11,11 +11,12 @@ namespace Datos
 
         public int id { get; set; }
 
-        public DateTime FechaDeIncio { get; set; }
-        public DateTime FechaDeFin { get; set; }
+        public DateTime? FechaDeIncio { get; set; }
+        public DateTime? FechaDeFin { get; set; }
         public int IdTipoMembresia { get; set; }
+        public int IdUsuarios { get; set; }
 
-        
+        public bool Activo { get; set; }
 
     }
 }

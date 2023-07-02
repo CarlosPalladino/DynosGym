@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.cboMembresia = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.brnAceptar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.lblMembresia = new System.Windows.Forms.Label();
@@ -40,18 +40,20 @@
             // 
             // cboMembresia
             // 
+            this.cboMembresia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMembresia.FormattingEnabled = true;
             this.cboMembresia.Location = new System.Drawing.Point(264, 100);
             this.cboMembresia.Name = "cboMembresia";
             this.cboMembresia.Size = new System.Drawing.Size(183, 21);
             this.cboMembresia.TabIndex = 0;
+            this.cboMembresia.SelectedIndexChanged += new System.EventHandler(this.cboMembresia_SelectedIndexChanged);
             // 
-            // textBox1
+            // txtPrecio
             // 
-            this.textBox1.Location = new System.Drawing.Point(264, 156);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(183, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtPrecio.Location = new System.Drawing.Point(264, 160);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(183, 20);
+            this.txtPrecio.TabIndex = 1;
             // 
             // brnAceptar
             // 
@@ -84,7 +86,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(198, 163);
+            this.lblPrecio.Location = new System.Drawing.Point(201, 167);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(37, 13);
             this.lblPrecio.TabIndex = 5;
@@ -92,7 +94,8 @@
             // 
             // dateIncio
             // 
-            this.dateIncio.Location = new System.Drawing.Point(305, 226);
+            this.dateIncio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateIncio.Location = new System.Drawing.Point(287, 226);
             this.dateIncio.Name = "dateIncio";
             this.dateIncio.Size = new System.Drawing.Size(99, 20);
             this.dateIncio.TabIndex = 6;
@@ -100,11 +103,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(198, 232);
+            this.label1.Location = new System.Drawing.Point(201, 233);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Iniciio";
+            this.label1.Text = "Inicio";
             // 
             // AltaMembresia
             // 
@@ -117,7 +120,7 @@
             this.Controls.Add(this.lblMembresia);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.brnAceptar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.cboMembresia);
             this.Name = "AltaMembresia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -131,7 +134,7 @@
         #endregion
 
         private System.Windows.Forms.ComboBox cboMembresia;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Button brnAceptar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblMembresia;

@@ -60,7 +60,13 @@ namespace DinosGimnasio
         {
             try
             {
-                picImg.Image = Image.FromFile(imagen);
+                //picImg.Image = Image.FromFile(imagen);
+
+                string rutaCompleta = Path.Combine(@"C:\Users\Carlos\Desktop\DinosGimnasioPresentacion", imagen);
+
+                picImg.Image = Image.FromFile(rutaCompleta);
+                picImg.Load(rutaCompleta);
+
             }
             catch (Exception)
             {
@@ -79,6 +85,8 @@ namespace DinosGimnasio
             dgvUsers.Columns["Id"].Visible = false;
             dgvCompra.Columns["id"].Visible = false;
             dgvCompra.Columns["idUsuario"].Visible = false;
+            dgvUsers.Columns["TiposMembresia"].Visible = false;
+
 
         }
 

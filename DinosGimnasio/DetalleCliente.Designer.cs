@@ -62,6 +62,7 @@
             this.btnAtrás.TabIndex = 7;
             this.btnAtrás.Text = "Atrás";
             this.btnAtrás.UseVisualStyleBackColor = true;
+            this.btnAtrás.Click += new System.EventHandler(this.btnAtrás_Click);
             // 
             // btnModi
             // 

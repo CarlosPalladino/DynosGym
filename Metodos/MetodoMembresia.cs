@@ -47,14 +47,14 @@ namespace Metodos
         {
             try
             {
-                datos.setearConsulta("INSERT INTO Membresia (FechaDeInicio, FechaDeFin, IdTipoMembresia, IdUsuarios) " +
-                              "VALUES (@inicio, @fin, @membresia, @user)");
+                datos.setearConsulta("INSERT INTO Membresia (FechaDeInicio, FechaDeFin, IdTipoMembresia, IdUsuarios,Activo)< " +
+                              "VALUES (@inicio, @fin, @membresia, @user,@activo)");
 
                 datos.setearParametro("@inicio", membresia.FechaDeIncio);
                 datos.setearParametro("@fin", membresia.FechaDeFin);
                 datos.setearParametro("@membresia", membresia.IdTipoMembresia);
                 datos.setearParametro("@user", membresia.IdUsuarios);
-
+                datos.setearParametro("@activo", membresia.Activo);
                 datos.ejecutarAccion();
                 datos.CerrarLectura();
 

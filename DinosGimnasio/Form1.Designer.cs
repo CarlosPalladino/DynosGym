@@ -42,7 +42,7 @@
             this.BtnLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnLogin.BackColor = System.Drawing.Color.DarkSlateGray;
             this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLogin.Font = new System.Drawing.Font("Lucida Sans Typewriter", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLogin.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.BtnLogin.Location = new System.Drawing.Point(186, 227);
             this.BtnLogin.Name = "BtnLogin";
@@ -69,20 +69,22 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(104, 157);
+            this.label3.Location = new System.Drawing.Point(77, 153);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 16);
+            this.label3.Size = new System.Drawing.Size(86, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Password";
             // 
             // User
             // 
             this.User.AutoSize = true;
+            this.User.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.User.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.User.Location = new System.Drawing.Point(106, 84);
+            this.User.Location = new System.Drawing.Point(77, 83);
             this.User.Name = "User";
-            this.User.Size = new System.Drawing.Size(36, 16);
+            this.User.Size = new System.Drawing.Size(47, 20);
             this.User.TabIndex = 4;
             this.User.Text = "User";
             // 

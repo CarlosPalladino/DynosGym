@@ -18,7 +18,11 @@ namespace Metodos
             try
 
             {
-                datos.setearConsulta("SELECT u.Id, u.Nombre, u.Apellido, u.Pago, u.Documento, u.FotoDePerfil, u.FechaDeNacimiento, u.Peso, u.Altura, u.Contacto,\r\n       m.FechaDeInicio, m.FechaDeFin,\r\n       t.Precio, t.Nombre AS NombreMembresia\r\nFROM Usuarios u\r\nJOIN Membresia m ON u.Id = m.IdUsuarios\r\nJOIN TipoMembresia t ON m.IdTipoMembresia = t.Id\r\n");
+
+                //datos.setearConsulta("SELECT u.Id, u.Nombre, u.Apellido, u.Pago, u.Documento, u.FotoDePerfil, u.FechaDeNacimiento, u.Peso, u.Altura, u.Contacto, m.FechaDeInicio, m.FechaDeFin, m.IdUsuarios, t.Precio, t.Nombre AS NombreMembresia FROM Usuarios u JOIN Membresia m ON u.Id = m.IdUsuarios JOIN TipoMembresia t ON m.IdTipoMembresia = t.d");
+
+                //datos.setearConsulta("SELECT u.Id, u.Nombre, u.Apellido, u.Pago, u.Documento, u.FotoDePerfil, u.FechaDeNacimiento, u.Peso, u.Altura, u.Contacto ,m.FechaDeInicio, m.FechaDeFin,m.IdUsuarios, t.Precio, t.Nombre AS NombreMembresia FROM Usuarios u ,TipoMembresia t,Membresia m  ");
+                datos.setearConsulta(" SELECT u.Id, u.Nombre, u.Apellido, u.Pago, u.Documento, u.FotoDePerfil, u.FechaDeNacimiento, u.Peso, u.Altura, u.Contacto  FROM Usuarios u");
                 datos.EjecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -37,6 +41,15 @@ namespace Metodos
                     user.Peso = (int)datos.Lector["Peso"];
                     user.Altura = (decimal)datos.Lector["Altura"];
                     user.Contacto = (long)datos.Lector["Contacto"];
+                   //user.Membresias = new Membresia();
+
+                   //user.Membresias.FechaDeIncio = (DateTime)datos.Lector["FechaDeInicio"];
+                   //user.Membresias.FechaDeFin = (DateTime)datos.Lector["FechaDeFin"];
+                   //user.Membresias.IdUsuarios = (int)datos.Lector["IdUsuarios"];
+
+                   //user.TiposMembresia = new TipoMembresia();
+                   //user.TiposMembresia.Nombre = (string)datos.Lector["NombreMembresia"];
+
 
                     lista.Add(user);
                 }
@@ -53,6 +66,56 @@ namespace Metodos
                 datos.CerrarLectura();
             }
         }
+
+        public List<Usuarios> DetalleUser(int _id)
+        {
+            List<Usuarios> detalle = new List<Usuarios>();
+            Usuarios user = new Usuarios();
+
+            try
+            {
+                datos.setearConsulta("SELECT u.Id, u.Nombre, Apellido, Pago, Documento, FotoDePerfil, FechaDeNacimiento, Peso, Altura, Contacto,m.FechaDeInicio, m.FechaDeFin, t.Precio, t.Nombre AS NombreMembresia FROM Usuarios u JOIN Membresia m ON u.Id = m.IdUsuarios JOIN TipoMembresia t ON m.IdTipoMembresia = t.Id  where u.Id =@id");
+                datos.setearParametro("@id",  _id);
+                datos.EjecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+
+                    user.Id = (int)datos.Lector["Id"];
+                    user.Nombre = (string)datos.Lector["Nombre"];
+                    user.Apellido = (string)datos.Lector["Apellido"];
+
+                    user.Pago = (bool)datos.Lector["Pago"];
+                    user.Documento = (long)datos.Lector["Documento"];
+                    if (!(datos.Lector["FotoDePerfil"] is DBNull))
+                        user.FotoDePerfil = (string)datos.Lector["FotoDePerfil"];
+
+                    user.FechaDeNacimiento = (DateTime)datos.Lector["FechaDeNacimiento"];
+                    user.Peso = (int)datos.Lector["Peso"];
+                    user.Altura = (decimal)datos.Lector["Altura"];
+                    user.Contacto = (long)datos.Lector["Contacto"];
+                    user.Membresias = new Membresia();
+                    user.Membresias.FechaDeIncio = (DateTime)datos.Lector["FechaDeInicio"];
+                    user.Membresias.FechaDeFin = (DateTime)datos.Lector["FechaDeFin"];
+
+                    user.TiposMembresia = new TipoMembresia();
+                    user.TiposMembresia.Nombre = (string)datos.Lector["NombreMembresia"];
+
+
+                    detalle.Add(user);
+                }
+                return detalle;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
+
+
 
         public void Nuevo(Usuarios user)
         {
@@ -85,7 +148,8 @@ namespace Metodos
         {
             try
             {
-                datos.setearConsulta("select U.Nombre  ,Apellido ,T.Nombre Membresia, documento,FotoDePerfil from Usuarios U,TipoMembresia  T where documento=@docu");
+                datos.setearConsulta("SELECT  u.Nombre, Apellido,FotoDePerfil,FechaDeNacimiento,m.FechaDeInicio, m.FechaDeFin,m.Activo,t.Nombre AS Membresia FROM Usuarios u JOIN Membresia m ON u.Id = m.IdUsuarios JOIN TipoMembresia t ON m.IdTipoMembresia = t.Id  where documento = @docu");
+
                 datos.setearParametro("@docu", user.Documento);
 
                 datos.EjecutarLectura();
@@ -93,13 +157,24 @@ namespace Metodos
                 {
                     user.Nombre = (string)datos.Lector["Nombre"];
                     user.Apellido = (string)datos.Lector["apellido"];
-
-                    user.TiposMembresia = new TipoMembresia();
-                    user.TiposMembresia.Nombre = (string)datos.Lector["Membresia"];
-
-                    user.Documento = (long)datos.Lector["documento"];
                     if (!(datos.Lector["FotoDePerfil"] is DBNull))
                         user.FotoDePerfil = (string)datos.Lector["FotoDePerfil"];
+                    user.FechaDeNacimiento = (DateTime)datos.Lector["FechaDeNacimiento"];
+
+
+                    user.Membresias = new Membresia();
+                    user.Membresias.FechaDeIncio = (DateTime)datos.Lector["FechaDeInicio"];
+                    user.Membresias.FechaDeFin = (DateTime)datos.Lector["FechaDeFin"];
+                    user.Membresias.Activo = (bool)datos.Lector["Activo"];
+                    user.TiposMembresia = new TipoMembresia();
+
+
+                    user.TiposMembresia.Nombre = (string)datos.Lector["Membresia"];
+
+
+                    user.Membresias = new Membresia();
+
+
                     return true;
                 }
 
@@ -144,20 +219,20 @@ namespace Metodos
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        public void DesactivarUser(int id)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("update Membresia set Activo = 0 Where id = @id");
+                datos.setearParametro("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
 
     }

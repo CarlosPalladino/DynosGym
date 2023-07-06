@@ -39,20 +39,27 @@ namespace DinosGimnasio
                 {
                     lblNombre.Text = user.Nombre;
                     lblApellido.Text = user.Apellido;
-                    //lblTipoMembresia.Text = _user.TiposMembresia.Nombre.ToString();
+
+                    Nacimiento.Value = (DateTime)user.FechaDeNacimiento;
                     CargarImagen(picImg.ImageLocation);
+                    if (user.Membresias.Activo = true)
+                    {
+                        SoundPlayer soundPlayer = new SoundPlayer();
+                        soundPlayer.SoundLocation = "C:/Users/Carlos/Desktop/DinosGimnasioPresentacion/check.wav";
+                        soundPlayer.Play();
+                        btnIngrsar.BackColor = Color.Green;
+                    }
+                    else
+                    {
+                        SoundPlayer soundPlayer = new SoundPlayer();
+                        soundPlayer.SoundLocation = "C:/Users/Carlos/Desktop/DinosGimnasioPresentacion/Err.wav";
+                        soundPlayer.Play();
+                        btnIngrsar.BackColor = Color.Red;
 
-                    SoundPlayer soundPlayer = new SoundPlayer();
-                    soundPlayer.SoundLocation = "C:/Users/Carlos/Desktop/DinosGimnasioPresentacion/check.wav";
-                    soundPlayer.Play();
+                    }
+
                 }
 
-                else
-                {
-                    SoundPlayer soundPlayer = new SoundPlayer();
-                    soundPlayer.SoundLocation = "C:/Users/Carlos/Desktop/DinosGimnasioPresentacion/check.wav";
-                    soundPlayer.Play();
-                }
 
             }
             catch (Exception ex)

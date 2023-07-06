@@ -150,7 +150,9 @@ namespace DinosGimnasio
             if (dgvUsers.CurrentRow != null)
             {
                 Usuarios seleccionado = (Usuarios)dgvUsers.CurrentRow.DataBoundItem;
-                DetalleCliente detalle = new DetalleCliente(seleccionado);
+
+
+                DetalleCliente detalle = new DetalleCliente(seleccionado.Id);
                 detalle.ShowDialog();
             }
         }

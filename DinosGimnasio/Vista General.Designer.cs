@@ -65,7 +65,7 @@
             // 
             // btnAcceso
             // 
-            this.btnAcceso.Location = new System.Drawing.Point(1082, 29);
+            this.btnAcceso.Location = new System.Drawing.Point(1039, 29);
             this.btnAcceso.Name = "btnAcceso";
             this.btnAcceso.Size = new System.Drawing.Size(110, 33);
             this.btnAcceso.TabIndex = 7;
@@ -75,7 +75,7 @@
             // 
             // btnDetalle
             // 
-            this.btnDetalle.Location = new System.Drawing.Point(913, 30);
+            this.btnDetalle.Location = new System.Drawing.Point(892, 30);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(110, 33);
             this.btnDetalle.TabIndex = 6;
@@ -95,7 +95,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(626, 34);
+            this.btnReset.Location = new System.Drawing.Point(588, 29);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
             this.btnReset.TabIndex = 4;
@@ -106,7 +106,7 @@
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(387, 44);
+            this.lblFiltro.Location = new System.Drawing.Point(367, 34);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(40, 13);
             this.lblFiltro.TabIndex = 3;
@@ -114,7 +114,7 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(451, 38);
+            this.txtFiltro.Location = new System.Drawing.Point(413, 31);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(169, 20);
             this.txtFiltro.TabIndex = 2;
@@ -122,7 +122,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(203, 30);
+            this.btnModificar.Location = new System.Drawing.Point(154, 31);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(123, 32);
             this.btnModificar.TabIndex = 1;
@@ -132,7 +132,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(37, 30);
+            this.btnNuevo.Location = new System.Drawing.Point(0, 30);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(123, 32);
             this.btnNuevo.TabIndex = 0;

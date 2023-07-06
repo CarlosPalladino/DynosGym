@@ -14,62 +14,37 @@ namespace DinosGimnasio
 {
     public partial class DetalleCliente : Form
     {
-        private Usuarios _user = null;
+        private Usuarios _user;
+        private int _id;
+        private List<Usuarios> lista;
 
-        public DetalleCliente(Usuarios seleccionado)
+        public DetalleCliente(int seleccionado)
         {
             InitializeComponent();
-            _user = seleccionado;
+            _id = seleccionado;
+
         }
 
         private void DetalleCliente_Load(object sender, EventArgs e)
         {
-            _user.TiposMembresia = new TipoMembresia();
-            TipoMembresia mem = new TipoMembresia();
-            Membresia membr = new Membresia();
+            MetodoUser met = new MetodoUser();
+            lista = met.DetalleUser(_id);
+            _user = lista[0];
+
             try
             {
 
-                if (_user != null)
-                {
-                    lblNombre.Text = _user.Nombre;
-                    lblApellido.Text = _user.Apellido;
-                    lblDocumento.Text = _user.Documento.ToString();
-                    lblContacto.Text = _user.Contacto.ToString();
-                    lblPago.Text = _user.Pago.ToString();
-                    lblPeso.Text = _user.Peso.ToString();
-                    lblNumero.Text = _user.Contacto.ToString();
-                 
+                label1.Text = _user.Nombre;
+                DgvDetalleUser.DataSource = lista;
+                CargarImagen(picPerdfil.ImageLocation);
+                OcultarColumnas();
 
 
 
+                dateTimeFin.Value = (DateTime)_user.Membresias.FechaDeIncio;
 
-                    if (_user.Membresias != null)
-                    {
-                        lblMembresia.Text = _user.TiposMembresia?.Nombre ?? "No tiene membresía";
+                DateTimeIncio.Value = (DateTime)_user.Membresias.FechaDeFin;
 
-                        DateTime fechaInicio = _user.Membresias.FechaDeIncio ?? new DateTime(1753, 1, 1);
-                        DateTime fechaFin = _user.Membresias.FechaDeFin ?? new DateTime(1753, 1, 1);
-
-                        DateTimeIncio.MinDate = new DateTime(2000, 1, 1);
-                        DateTimeIncio.Value = fechaInicio;
-
-                        dateTimeFin.MinDate = new DateTime(2000, 1, 1);
-                        dateTimeFin.Value = fechaFin;
-                    }
-                    else
-                    {
-                        lblMembresia.Text = "No tiene membresía";
-
-                        DateTimeIncio.MinDate = DateTimePicker.MinimumDateTime;
-                        DateTimeIncio.Value = DateTimePicker.MinimumDateTime;
-
-                        dateTimeFin.MinDate = DateTimePicker.MinimumDateTime;
-                        dateTimeFin.Value = DateTimePicker.MinimumDateTime;
-                    }
-
-                    CargarImagen(picPerdfil.ImageLocation);
-                }
 
 
 
@@ -81,16 +56,18 @@ namespace DinosGimnasio
             }
         }
 
-        private void DateTimeIncio_ValueChanged(object sender, EventArgs e)
+
+        public void OcultarColumnas()
         {
-            DateTimeIncio.Value = (DateTime)_user.Membresias.FechaDeIncio;
+            DgvDetalleUser.Columns["FotoDePerfil"].Visible = false;
+            DgvDetalleUser.Columns["Pago"].Visible = false;
+            //DgvDetalleUser.Columns["Membresias"].Visible = false;
+            //dgvUsers.Columns["Id"].Visible = false;
+            //dgvUsers.Columns["TiposMembresia"].Visible = false;
+
+
         }
 
-        private void dateTimeFin_ValueChanged(object sender, EventArgs e)
-        {
-
-            dateTimeFin.Value = (DateTime)_user.Membresias.FechaDeFin;
-        }
 
         private void CargarImagen(string imagen)
         {

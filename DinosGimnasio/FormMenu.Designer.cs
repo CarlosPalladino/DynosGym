@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCapturar = new System.Windows.Forms.Button();
             this.lblContacto = new System.Windows.Forms.Label();
             this.txtContacto = new System.Windows.Forms.TextBox();
             this.BtnTomarFoto = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.lblDni = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.btnCapturar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pickImagen)).BeginInit();
             this.SuspendLayout();
@@ -78,6 +78,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(626, 510);
             this.panel1.TabIndex = 0;
+            // 
+            // btnCapturar
+            // 
+            this.btnCapturar.Location = new System.Drawing.Point(411, 380);
+            this.btnCapturar.Name = "btnCapturar";
+            this.btnCapturar.Size = new System.Drawing.Size(75, 23);
+            this.btnCapturar.TabIndex = 29;
+            this.btnCapturar.Text = "Caputar";
+            this.btnCapturar.UseVisualStyleBackColor = true;
+            this.btnCapturar.Click += new System.EventHandler(this.btnCapturar_Click);
             // 
             // lblContacto
             // 
@@ -233,16 +243,6 @@
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre";
             // 
-            // btnCapturar
-            // 
-            this.btnCapturar.Location = new System.Drawing.Point(411, 380);
-            this.btnCapturar.Name = "btnCapturar";
-            this.btnCapturar.Size = new System.Drawing.Size(75, 23);
-            this.btnCapturar.TabIndex = 29;
-            this.btnCapturar.Text = "Caputar";
-            this.btnCapturar.UseVisualStyleBackColor = true;
-            this.btnCapturar.Click += new System.EventHandler(this.btnCapturar_Click);
-            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,7 +250,7 @@
             this.ClientSize = new System.Drawing.Size(1195, 682);
             this.Controls.Add(this.panel1);
             this.Name = "Registro";
-            this.Text = "Registro";
+            this.Text = "6";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Registro_FormClosed);
             this.Load += new System.EventHandler(this.Registro_Load);
             this.panel1.ResumeLayout(false);

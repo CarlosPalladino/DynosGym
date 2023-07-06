@@ -33,7 +33,7 @@
             this.btnIngrsar = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Nacimiento = new System.Windows.Forms.DateTimePicker();
             this.lbtittle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picImg)).BeginInit();
             this.SuspendLayout();
@@ -82,13 +82,15 @@
             this.lblApellido.TabIndex = 5;
             this.lblApellido.Text = "Apellido";
             // 
-            // dateTimePicker1
+            // Nacimiento
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(160, 290);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(207, 20);
-            this.dateTimePicker1.TabIndex = 7;
-            this.dateTimePicker1.Value = new System.DateTime(2023, 6, 25, 20, 47, 54, 0);
+            this.Nacimiento.Location = new System.Drawing.Point(160, 290);
+            this.Nacimiento.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
+            this.Nacimiento.MinDate = new System.DateTime(1950, 12, 31, 0, 0, 0, 0);
+            this.Nacimiento.Name = "Nacimiento";
+            this.Nacimiento.Size = new System.Drawing.Size(207, 20);
+            this.Nacimiento.TabIndex = 7;
+            this.Nacimiento.Value = new System.DateTime(2023, 6, 30, 0, 0, 0, 0);
             // 
             // lbtittle
             // 
@@ -106,7 +108,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lbtittle);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Nacimiento);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnIngrsar);
@@ -128,7 +130,7 @@
         private System.Windows.Forms.Button btnIngrsar;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblApellido;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker Nacimiento;
         private System.Windows.Forms.Label lbtittle;
     }
 }

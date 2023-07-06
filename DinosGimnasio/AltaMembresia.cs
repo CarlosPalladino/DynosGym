@@ -41,12 +41,13 @@ namespace DinosGimnasio
             user.TiposMembresia = new TipoMembresia();
             try
             {
-                //user.TiposMembresia = (TipoMembresia)cboMembresia.SelectedItem;
+
                 user.Membresias.IdTipoMembresia = (int)cboMembresia.SelectedValue;
                 user.TiposMembresia = (TipoMembresia)cboMembresia.SelectedItem; // Obtener el objeto seleccionado del ComboBox
                 user.TiposMembresia.Precio = decimal.Parse(txtPrecio.Text);
                 user.Membresias.FechaDeIncio = dateIncio.Value;
                 user.Membresias.FechaDeFin = dateIncio.Value.AddMonths(1).Date;
+                user.Membresias.Activo = true;
                 user.Membresias.IdUsuarios = usuario.Id;
                 if (user.Membresias.Activo != false)
                 {

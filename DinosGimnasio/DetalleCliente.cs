@@ -34,10 +34,14 @@ namespace DinosGimnasio
             try
             {
 
-                label1.Text = _user.Nombre;
-                DgvDetalleUser.DataSource = lista;
+                lblNombre.Text = _user.Nombre;
+                lblApellido.Text = _user.Apellido;
+                lbldocumento.Text = _user.Documento.ToString();
+                lblTipoMembresia.Text = _user.TiposMembresia.Nombre.ToString();
+
+                //DgvDetalleUser.DataSource = lista;
                 CargarImagen(picPerdfil.ImageLocation);
-                OcultarColumnas();
+                //OcultarColumnas();
 
 
 
@@ -57,16 +61,16 @@ namespace DinosGimnasio
         }
 
 
-        public void OcultarColumnas()
-        {
-            DgvDetalleUser.Columns["FotoDePerfil"].Visible = false;
-            DgvDetalleUser.Columns["Pago"].Visible = false;
-            //DgvDetalleUser.Columns["Membresias"].Visible = false;
-            //dgvUsers.Columns["Id"].Visible = false;
-            //dgvUsers.Columns["TiposMembresia"].Visible = false;
+        //public void OcultarColumnas()
+        //{
+        //    DgvDetalleUser.Columns["FotoDePerfil"].Visible = false;
+        //    DgvDetalleUser.Columns["Pago"].Visible = false;
+        //    //DgvDetalleUser.Columns["Membresias"].Visible = false;
+        //    //dgvUsers.Columns["Id"].Visible = false;
+        //    //dgvUsers.Columns["TiposMembresia"].Visible = false;
 
 
-        }
+        //}
 
 
         private void CargarImagen(string imagen)
@@ -120,6 +124,11 @@ namespace DinosGimnasio
         private void btnAtrás_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

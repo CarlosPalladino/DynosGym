@@ -148,7 +148,7 @@ namespace Metodos
         {
             try
             {
-                datos.setearConsulta("SELECT  u.Nombre, Apellido,FotoDePerfil,FechaDeNacimiento,m.FechaDeInicio, m.FechaDeFin,m.Activo,t.Nombre AS Membresia FROM Usuarios u JOIN Membresia m ON u.Id = m.IdUsuarios JOIN TipoMembresia t ON m.IdTipoMembresia = t.Id  where documento = @docu");
+                datos.setearConsulta("SELECT  u.Nombre, Apellido,FotoDePerfil,FechaDeNacimiento,m.FechaDeInicio, m.FechaDeFin,m.Activo FROM Usuarios u JOIN Membresia m ON u.Id = m.IdUsuarios where documento = @docu and m.activo =1");
 
                 datos.setearParametro("@docu", user.Documento);
 
@@ -165,14 +165,13 @@ namespace Metodos
                     user.Membresias = new Membresia();
                     user.Membresias.FechaDeIncio = (DateTime)datos.Lector["FechaDeInicio"];
                     user.Membresias.FechaDeFin = (DateTime)datos.Lector["FechaDeFin"];
-                    user.Membresias.Activo = (bool)datos.Lector["Activo"];
-                    user.TiposMembresia = new TipoMembresia();
+
+                    if (!(datos.Lector["Activo"] is DBNull))
+                        user.Membresias.Activo = (bool)datos.Lector["Activo"];
 
 
-                    user.TiposMembresia.Nombre = (string)datos.Lector["Membresia"];
 
 
-                    user.Membresias = new Membresia();
 
 
                     return true;

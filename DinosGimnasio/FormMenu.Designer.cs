@@ -141,9 +141,9 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Location = new System.Drawing.Point(43, 202);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(53, 13);
+            this.lblFecha.Size = new System.Drawing.Size(60, 13);
             this.lblFecha.TabIndex = 22;
-            this.lblFecha.Text = "Incripcion";
+            this.lblFecha.Text = "Nacimiento";
             // 
             // txtAltura
             // 

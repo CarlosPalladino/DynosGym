@@ -35,30 +35,36 @@ namespace DinosGimnasio
             {
                 Usuarios user = new Usuarios();
                 user.Documento = long.Parse(txtDocu.Text);
-                if (metodo.AccesoUser(user))
+                metodo.AccesoUser(user);
+                if (user.Id != 0)
                 {
                     lblNombre.Text = user.Nombre;
                     lblApellido.Text = user.Apellido;
 
-                    Nacimiento.Value = (DateTime)user.FechaDeNacimiento;
+                    Nacimiento.Value = user.FechaDeNacimiento;
                     CargarImagen(picImg.ImageLocation);
-                    if (user.Membresias.Activo = true)
-                    {
-                        SoundPlayer soundPlayer = new SoundPlayer();
-                        soundPlayer.SoundLocation = "C:/Users/Carlos/Desktop/DinosGimnasioPresentacion/check.wav";
-                        soundPlayer.Play();
-                        btnIngrsar.BackColor = Color.Green;
-                    }
-                    else
-                    {
-                        SoundPlayer soundPlayer = new SoundPlayer();
-                        soundPlayer.SoundLocation = "C:/Users/Carlos/Desktop/DinosGimnasioPresentacion/Err.wav";
-                        soundPlayer.Play();
-                        btnIngrsar.BackColor = Color.Red;
 
-                    }
+
+
+                    SoundPlayer soundPlayer = new SoundPlayer();
+                    soundPlayer.SoundLocation = "C:/Users/Carlos/Desktop/DinosGimnasioPresentacion/check.wav";
+                    soundPlayer.Play();
+                    btnIngrsar.BackColor = Color.Green;
+                }
+                else
+                {
+
+                    lblNombre.Text = null;
+                    lblApellido.Text = null;
+                    CargarImagen(picImg.ImageLocation);
+                    SoundPlayer soundPlayer = new SoundPlayer();
+                    soundPlayer.SoundLocation = "C:/Users/Carlos/Desktop/DinosGimnasioPresentacion/Err.wav";
+                    soundPlayer.Play();
+                    btnIngrsar.BackColor = Color.Red;
 
                 }
+
+
 
 
             }

@@ -56,7 +56,7 @@
             // 
             // btnIngrsar
             // 
-            this.btnIngrsar.Location = new System.Drawing.Point(319, 359);
+            this.btnIngrsar.Location = new System.Drawing.Point(315, 361);
             this.btnIngrsar.Name = "btnIngrsar";
             this.btnIngrsar.Size = new System.Drawing.Size(109, 39);
             this.btnIngrsar.TabIndex = 2;
@@ -90,7 +90,7 @@
             this.Nacimiento.Name = "Nacimiento";
             this.Nacimiento.Size = new System.Drawing.Size(207, 20);
             this.Nacimiento.TabIndex = 7;
-            this.Nacimiento.Value = new System.DateTime(2023, 6, 30, 0, 0, 0, 0);
+            this.Nacimiento.Value = new System.DateTime(2023, 7, 8, 0, 0, 0, 0);
             // 
             // lbtittle
             // 

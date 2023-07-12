@@ -41,15 +41,7 @@ namespace Metodos
                     user.Peso = (int)datos.Lector["Peso"];
                     user.Altura = (decimal)datos.Lector["Altura"];
                     user.Contacto = (long)datos.Lector["Contacto"];
-                   //user.Membresias = new Membresia();
-
-                   //user.Membresias.FechaDeIncio = (DateTime)datos.Lector["FechaDeInicio"];
-                   //user.Membresias.FechaDeFin = (DateTime)datos.Lector["FechaDeFin"];
-                   //user.Membresias.IdUsuarios = (int)datos.Lector["IdUsuarios"];
-
-                   //user.TiposMembresia = new TipoMembresia();
-                   //user.TiposMembresia.Nombre = (string)datos.Lector["NombreMembresia"];
-
+                 
 
                     lista.Add(user);
                 }
@@ -191,8 +183,14 @@ namespace Metodos
         {
             try
             {
-                datos.setearConsulta("update Usuarios set Peso =@peso");
-                datos.setearParametro("peso", modi.Peso);
+
+                datos.setearConsulta("update Usuarios set Nombre=@nombre, Apellido=@apellido,FotoDePerfil=@foto ,FechaDeNacimiento=@nacimiento,Peso=@peso where Id=@id");
+                datos.setearParametro("@nombre", modi.Nombre);
+                datos.setearParametro("@apellido", modi.Apellido);
+                datos.setearParametro("@foto", modi.FotoDePerfil);
+                datos.setearParametro("@nacimiento", modi.FechaDeNacimiento);
+                datos.setearParametro("@peso", modi.Peso);
+                datos.setearParametro("@id", modi.Id);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

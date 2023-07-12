@@ -38,15 +38,16 @@ namespace DinosGimnasio
         {
             InitializeComponent();
             _user = usuarios;
+            lblTitulo.Text = "Modificación de Usuario";
         }
 
         private void Registro_Load(object sender, EventArgs e)
         {
             CargarDispositivo();
-            if(_user != null)
+            if (_user != null)
             {
                 txtNombre.Text = _user.Nombre.ToString();
-                txtApelido.Text = _user.Apellido.ToString();    
+                txtApelido.Text = _user.Apellido.ToString();
                 txtAltura.Text = _user.Altura.ToString();
                 txtContacto.Text = _user.Contacto.ToString();
                 txtDni.Text = _user.Documento.ToString();
@@ -75,20 +76,34 @@ namespace DinosGimnasio
         {
             MetodoUser metodo = new MetodoUser();
             Usuarios User = new Usuarios();
+
             try
             {
-                User.Nombre = txtNombre.Text;
-                User.Apellido = txtApelido.Text;
-                User.Contacto = long.Parse(txtContacto.Text);
-                User.Altura = decimal.Parse(txtAltura.Text);
-                User.Documento = long.Parse(txtDni.Text);
-                User.Peso = int.Parse(txtPeso.Text);
-                User.FechaDeNacimiento = dtpFecha.Value;
-                User.FotoDePerfil = nombreImagenCapturada;
+                if (_user != null)
+                {
+                    User.Id = _user.Id;
+                    User.Nombre = txtNombre.Text;
+                    User.Apellido = txtApelido.Text;
+                    User.Contacto = long.Parse(txtContacto.Text);
+                    User.Altura = decimal.Parse(txtAltura.Text);
+                    User.Documento = long.Parse(txtDni.Text);
+                    User.Peso = int.Parse(txtPeso.Text);
+                    User.FechaDeNacimiento = dtpFecha.Value;
+                    User.FotoDePerfil = nombreImagenCapturada;
 
-                metodo.Nuevo(User);
-                MessageBox.Show("agregado exitoso ");
-                Close();
+                    metodo.Modificar(User);
+                    MessageBox.Show("modificación exitosa");
+                    Close();
+
+                }
+                else
+                {
+                    metodo.Nuevo(User);
+                    MessageBox.Show("agregado exitoso");
+                    Close();
+
+
+                }
 
             }
             catch (Exception ex)
@@ -112,7 +127,7 @@ namespace DinosGimnasio
             {
 
                 {
-                    pickImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoNaLFFSdD4YhW8mqgDBSWY8nHnte6ANHQWz6Lsl37yA&s");
+                    pickImagen.Load("https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-portrait-176256935.jpg");
                 }
             }
         }
@@ -163,5 +178,6 @@ namespace DinosGimnasio
             }
         }
 
+      
     }
 }

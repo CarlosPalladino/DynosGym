@@ -65,9 +65,9 @@
             // 
             // btnAcceso
             // 
-            this.btnAcceso.Location = new System.Drawing.Point(1039, 29);
+            this.btnAcceso.Location = new System.Drawing.Point(1022, 33);
             this.btnAcceso.Name = "btnAcceso";
-            this.btnAcceso.Size = new System.Drawing.Size(110, 33);
+            this.btnAcceso.Size = new System.Drawing.Size(119, 33);
             this.btnAcceso.TabIndex = 7;
             this.btnAcceso.Text = "Acceso";
             this.btnAcceso.UseVisualStyleBackColor = true;
@@ -75,9 +75,9 @@
             // 
             // btnDetalle
             // 
-            this.btnDetalle.Location = new System.Drawing.Point(892, 30);
+            this.btnDetalle.Location = new System.Drawing.Point(881, 34);
             this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(110, 33);
+            this.btnDetalle.Size = new System.Drawing.Size(119, 33);
             this.btnDetalle.TabIndex = 6;
             this.btnDetalle.Text = "Detalle";
             this.btnDetalle.UseVisualStyleBackColor = true;
@@ -85,9 +85,9 @@
             // 
             // btnMembresia
             // 
-            this.btnMembresia.Location = new System.Drawing.Point(755, 31);
+            this.btnMembresia.Location = new System.Drawing.Point(744, 35);
             this.btnMembresia.Name = "btnMembresia";
-            this.btnMembresia.Size = new System.Drawing.Size(112, 32);
+            this.btnMembresia.Size = new System.Drawing.Size(121, 32);
             this.btnMembresia.TabIndex = 5;
             this.btnMembresia.Text = " Agregar Membresia";
             this.btnMembresia.UseVisualStyleBackColor = true;
@@ -95,7 +95,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(588, 29);
+            this.btnReset.Location = new System.Drawing.Point(605, 39);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
             this.btnReset.TabIndex = 4;
@@ -106,15 +106,16 @@
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(367, 34);
+            this.lblFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltro.Location = new System.Drawing.Point(326, 38);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(40, 13);
+            this.lblFiltro.Size = new System.Drawing.Size(59, 20);
             this.lblFiltro.TabIndex = 3;
             this.lblFiltro.Text = "Buscar";
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(413, 31);
+            this.txtFiltro.Location = new System.Drawing.Point(413, 39);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(169, 20);
             this.txtFiltro.TabIndex = 2;
@@ -122,7 +123,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(154, 31);
+            this.btnModificar.Location = new System.Drawing.Point(164, 35);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(123, 32);
             this.btnModificar.TabIndex = 1;
@@ -132,7 +133,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(0, 30);
+            this.btnNuevo.Location = new System.Drawing.Point(10, 34);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(123, 32);
             this.btnNuevo.TabIndex = 0;

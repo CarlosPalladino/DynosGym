@@ -164,12 +164,14 @@ namespace DinosGimnasio
                 Usuarios seleccionado = (Usuarios)dgvUsers.CurrentRow.DataBoundItem;
                 Registro registro = new Registro(seleccionado);
                 registro.ShowDialog();
+                Cargar();
             }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             txtFiltro.ResetText();
+           
         }
 
         private void btnAcceso_Click(object sender, EventArgs e)
@@ -194,6 +196,7 @@ namespace DinosGimnasio
 
             dgvUsers.DataSource = null;
             dgvUsers.DataSource = user;
+            OcultarColumnas();
         }
 
     }

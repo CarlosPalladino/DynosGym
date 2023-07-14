@@ -41,7 +41,7 @@ namespace Metodos
                     user.Peso = (int)datos.Lector["Peso"];
                     user.Altura = (decimal)datos.Lector["Altura"];
                     user.Contacto = (long)datos.Lector["Contacto"];
-                 
+
 
                     lista.Add(user);
                 }
@@ -67,7 +67,7 @@ namespace Metodos
             try
             {
                 datos.setearConsulta("SELECT u.Id, u.Nombre, Apellido, Pago, Documento, FotoDePerfil, FechaDeNacimiento, Peso, Altura, Contacto,m.FechaDeInicio, m.FechaDeFin, t.Precio, t.Nombre AS NombreMembresia FROM Usuarios u JOIN Membresia m ON u.Id = m.IdUsuarios JOIN TipoMembresia t ON m.IdTipoMembresia = t.Id  where u.Id =@id");
-                datos.setearParametro("@id",  _id);
+                datos.setearParametro("@id", _id);
                 datos.EjecutarLectura();
 
                 while (datos.Lector.Read())
@@ -114,7 +114,7 @@ namespace Metodos
 
             try
             {
-                datos.setearConsulta("insert into Usuarios( Nombre,Apellido,Pago,Documento,FotoDePerfil,FechaDeNacimiento,Peso,Altura,Contacto)Values(@nombre,@apellido,@pago,@doc,@foto,@fecha,@peso,@altura,@contacto)");
+                datos.setearConsulta("insert into Usuarios( Nombre,Apellido,Pago,Documento,FotoDePerfil,FechaDeNacimiento,Peso,Altura,Contacto)Values(@nombre,@apellido,@doc,@pago,@foto,@fecha,@peso,@altura,@contacto)");
                 datos.setearParametro("@nombre", user.Nombre);
                 datos.setearParametro("@apellido", user.Apellido);
                 datos.setearParametro("@pago", user.Pago);
@@ -125,7 +125,7 @@ namespace Metodos
                 datos.setearParametro("@altura", user.Altura);
                 datos.setearParametro("@contacto", user.Contacto);
 
-                datos.EjecutarLectura();
+                datos.ejecutarAccion();
 
             }
             catch (Exception ex)
@@ -140,13 +140,16 @@ namespace Metodos
         {
             try
             {
-                datos.setearConsulta("SELECT  u.Nombre, Apellido,FotoDePerfil,FechaDeNacimiento,m.FechaDeInicio, m.FechaDeFin,m.Activo FROM Usuarios u JOIN Membresia m ON u.Id = m.IdUsuarios where documento = @docu and m.activo =1");
+                //datos.setearConsulta("SELECT  u.Id,u.Nombre, Apellido,FotoDePerfil,FechaDeNacimiento FROM Usuarios u where documento = @docu");
+                datos.setearConsulta("SELECT  u.Id,u.Nombre, Apellido,FotoDePerfil,FechaDeNacimiento,m.FechaDeInicio, m.FechaDeFin,m.Activo FROM Usuarios u JOIN Membresia m ON u.Id = m.IdUsuarios where documento = @docu and m.activo =1");
 
                 datos.setearParametro("@docu", user.Documento);
 
                 datos.EjecutarLectura();
                 while (datos.Lector.Read())
                 {
+
+                    user.Id = (int)datos.Lector["Id"];
                     user.Nombre = (string)datos.Lector["Nombre"];
                     user.Apellido = (string)datos.Lector["apellido"];
                     if (!(datos.Lector["FotoDePerfil"] is DBNull))

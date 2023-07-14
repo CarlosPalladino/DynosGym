@@ -47,7 +47,7 @@
             // 
             // picPerdfil
             // 
-            this.picPerdfil.Location = new System.Drawing.Point(529, 79);
+            this.picPerdfil.Location = new System.Drawing.Point(518, 79);
             this.picPerdfil.Name = "picPerdfil";
             this.picPerdfil.Size = new System.Drawing.Size(209, 214);
             this.picPerdfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -73,7 +73,7 @@
             // 
             // DateTimeIncio
             // 
-            this.DateTimeIncio.Location = new System.Drawing.Point(244, 273);
+            this.DateTimeIncio.Location = new System.Drawing.Point(274, 273);
             this.DateTimeIncio.MinDate = new System.DateTime(1964, 6, 10, 0, 0, 0, 0);
             this.DateTimeIncio.Name = "DateTimeIncio";
             this.DateTimeIncio.Size = new System.Drawing.Size(200, 20);
@@ -92,82 +92,90 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(175, 135);
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(136, 137);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(35, 13);
+            this.lblNombre.Size = new System.Drawing.Size(41, 15);
             this.lblNombre.TabIndex = 21;
             this.lblNombre.Text = "label1";
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(175, 175);
+            this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellido.Location = new System.Drawing.Point(136, 174);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(35, 13);
+            this.lblApellido.Size = new System.Drawing.Size(41, 15);
             this.lblApellido.TabIndex = 22;
             this.lblApellido.Text = "label2";
             // 
             // lbldocumento
             // 
             this.lbldocumento.AutoSize = true;
-            this.lbldocumento.Location = new System.Drawing.Point(325, 135);
+            this.lbldocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldocumento.Location = new System.Drawing.Point(382, 136);
             this.lbldocumento.Name = "lbldocumento";
-            this.lbldocumento.Size = new System.Drawing.Size(35, 13);
+            this.lbldocumento.Size = new System.Drawing.Size(41, 15);
             this.lbldocumento.TabIndex = 23;
             this.lbldocumento.Text = "label3";
             // 
             // lblTipoMembresia
             // 
             this.lblTipoMembresia.AutoSize = true;
-            this.lblTipoMembresia.Location = new System.Drawing.Point(325, 175);
+            this.lblTipoMembresia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoMembresia.Location = new System.Drawing.Point(382, 176);
             this.lblTipoMembresia.Name = "lblTipoMembresia";
-            this.lblTipoMembresia.Size = new System.Drawing.Size(35, 13);
+            this.lblTipoMembresia.Size = new System.Drawing.Size(41, 15);
             this.lblTipoMembresia.TabIndex = 25;
             this.lblTipoMembresia.Text = "label5";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(96, 135);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 134);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(62, 16);
             this.label1.TabIndex = 26;
             this.label1.Text = "Nombre";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(96, 175);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(17, 174);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(65, 16);
             this.label2.TabIndex = 27;
             this.label2.Text = "Apellido";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(241, 135);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(255, 135);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.Size = new System.Drawing.Size(85, 16);
             this.label3.TabIndex = 28;
             this.label3.Text = "Documento";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(241, 175);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(255, 175);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.Size = new System.Drawing.Size(84, 16);
             this.label4.TabIndex = 29;
             this.label4.Text = "Membresia";
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(344, 26);
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(332, 26);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(64, 20);
+            this.lblTitulo.Size = new System.Drawing.Size(71, 20);
             this.lblTitulo.TabIndex = 30;
             this.lblTitulo.Text = "Usuario";
             this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);

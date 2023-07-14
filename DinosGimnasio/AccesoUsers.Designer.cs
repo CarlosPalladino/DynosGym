@@ -35,12 +35,13 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.Nacimiento = new System.Windows.Forms.DateTimePicker();
             this.lbtittle = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picImg)).BeginInit();
             this.SuspendLayout();
             // 
             // picImg
             // 
-            this.picImg.Location = new System.Drawing.Point(496, 65);
+            this.picImg.Location = new System.Drawing.Point(491, 65);
             this.picImg.Name = "picImg";
             this.picImg.Size = new System.Drawing.Size(237, 245);
             this.picImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -49,7 +50,7 @@
             // 
             // txtDocu
             // 
-            this.txtDocu.Location = new System.Drawing.Point(169, 94);
+            this.txtDocu.Location = new System.Drawing.Point(178, 130);
             this.txtDocu.Name = "txtDocu";
             this.txtDocu.Size = new System.Drawing.Size(178, 20);
             this.txtDocu.TabIndex = 1;
@@ -67,7 +68,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(166, 182);
+            this.lblNombre.Location = new System.Drawing.Point(175, 218);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 3;
@@ -76,7 +77,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(303, 182);
+            this.lblApellido.Location = new System.Drawing.Point(312, 218);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(44, 13);
             this.lblApellido.TabIndex = 5;
@@ -95,18 +96,30 @@
             // lbtittle
             // 
             this.lbtittle.AutoSize = true;
-            this.lbtittle.Location = new System.Drawing.Point(229, 57);
+            this.lbtittle.Location = new System.Drawing.Point(238, 93);
             this.lbtittle.Name = "lbtittle";
             this.lbtittle.Size = new System.Drawing.Size(62, 13);
             this.lbtittle.TabIndex = 8;
             this.lbtittle.Text = "Documento";
             this.lbtittle.Click += new System.EventHandler(this.label1_Click);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(341, 22);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(96, 16);
+            this.lblTitulo.TabIndex = 9;
+            this.lblTitulo.Text = "Acceso User";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // AccesoUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lbtittle);
             this.Controls.Add(this.Nacimiento);
             this.Controls.Add(this.lblApellido);
@@ -132,5 +145,6 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.DateTimePicker Nacimiento;
         private System.Windows.Forms.Label lbtittle;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }

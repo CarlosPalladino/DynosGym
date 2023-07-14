@@ -36,6 +36,7 @@ namespace DinosGimnasio
                 Usuarios user = new Usuarios();
                 user.Documento = long.Parse(txtDocu.Text);
                 metodo.AccesoUser(user);
+
                 if (user.Id != 0)
                 {
                     lblNombre.Text = user.Nombre;

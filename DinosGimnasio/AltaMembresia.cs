@@ -49,17 +49,18 @@ namespace DinosGimnasio
                 user.Membresias.FechaDeFin = dateIncio.Value.AddMonths(1).Date;
                 user.Membresias.Activo = true;
                 user.Membresias.IdUsuarios = usuario.Id;
-                if (user.Membresias.Activo != false)
+                if (user.Membresias.Activo == false)
                 {
-                    //membresia.ActualizarMembresia(user.Membresias, user.TiposMembresia, user.Id);
+                    membresia.ActualizarMembresia(user.Membresias, user.TiposMembresia);
                     MessageBox.Show("Membresia actualizada correctamente");
+                    Close();
 
                 }
                 else
                 {
-                    membresia.InsertarMembresia(user.Membresias, user.TiposMembresia);
+                    membresia.InsertarMembresia(user.Membresias);
                     MessageBox.Show("Membresia insertada correctamente");
-
+                    Close();
 
                 }
             }
@@ -71,7 +72,7 @@ namespace DinosGimnasio
             finally
             {
                 Close();
-            } 
+            }
         }
 
         private void cboMembresia_SelectedIndexChanged(object sender, EventArgs e)

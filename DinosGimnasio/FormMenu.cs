@@ -75,34 +75,39 @@ namespace DinosGimnasio
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             MetodoUser metodo = new MetodoUser();
-            Usuarios User = new Usuarios();
 
             try
             {
-                if (_user != null)
+                if (_user == null)
                 {
-                    User.Id = _user.Id;
-                    User.Nombre = txtNombre.Text;
-                    User.Apellido = txtApelido.Text;
-                    User.Contacto = long.Parse(txtContacto.Text);
-                    User.Altura = decimal.Parse(txtAltura.Text);
-                    User.Documento = long.Parse(txtDni.Text);
-                    User.Peso = int.Parse(txtPeso.Text);
-                    User.FechaDeNacimiento = dtpFecha.Value;
-                    User.FotoDePerfil = nombreImagenCapturada;
+                    _user = new Usuarios();
+                  
+                  _user.Id = _user.Id;
+                  _user.Nombre = txtNombre.Text;
+                  _user.Apellido = txtApelido.Text;
+                    //_user.Pago =
+                  _user.Contacto = long.Parse(txtContacto.Text);
+                  _user.Altura = decimal.Parse(txtAltura.Text);
+                  _user.Documento = long.Parse(txtDni.Text);
+                  _user.Peso = int.Parse(txtPeso.Text);
+                  _user.FechaDeNacimiento = dtpFecha.Value;
+                  _user.FotoDePerfil = nombreImagenCapturada;
+                    if (_user.Id != 0)
+                    {
 
-                    metodo.Modificar(User);
-                    MessageBox.Show("modificación exitosa");
-                    Close();
+                        metodo.Modificar(_user);
+                        MessageBox.Show("modificación exitosa");
+                        Close();
 
-                }
-                else
-                {
-                    metodo.Nuevo(User);
-                    MessageBox.Show("agregado exitoso");
-                    Close();
+                    }
+                    else
+                    {
+                        metodo.Nuevo(   _user);
+                        MessageBox.Show("agregado exitoso");
+                        Close();
 
 
+                    }
                 }
 
             }
@@ -178,6 +183,6 @@ namespace DinosGimnasio
             }
         }
 
-      
+
     }
 }

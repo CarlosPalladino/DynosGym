@@ -36,6 +36,7 @@
             this.lblPrecio = new System.Windows.Forms.Label();
             this.dateIncio = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cboMembresia
@@ -57,7 +58,7 @@
             // 
             // brnAceptar
             // 
-            this.brnAceptar.Location = new System.Drawing.Point(390, 315);
+            this.brnAceptar.Location = new System.Drawing.Point(416, 344);
             this.brnAceptar.Name = "brnAceptar";
             this.brnAceptar.Size = new System.Drawing.Size(82, 30);
             this.brnAceptar.TabIndex = 2;
@@ -67,7 +68,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(230, 314);
+            this.button2.Location = new System.Drawing.Point(256, 343);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(86, 31);
             this.button2.TabIndex = 3;
@@ -77,25 +78,27 @@
             // lblMembresia
             // 
             this.lblMembresia.AutoSize = true;
-            this.lblMembresia.Location = new System.Drawing.Point(198, 108);
+            this.lblMembresia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMembresia.Location = new System.Drawing.Point(161, 105);
             this.lblMembresia.Name = "lblMembresia";
-            this.lblMembresia.Size = new System.Drawing.Size(58, 13);
+            this.lblMembresia.Size = new System.Drawing.Size(84, 16);
             this.lblMembresia.TabIndex = 4;
             this.lblMembresia.Text = "Membresia";
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(201, 167);
+            this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.Location = new System.Drawing.Point(161, 164);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(37, 13);
+            this.lblPrecio.Size = new System.Drawing.Size(52, 16);
             this.lblPrecio.TabIndex = 5;
             this.lblPrecio.Text = "Precio";
             // 
             // dateIncio
             // 
             this.dateIncio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateIncio.Location = new System.Drawing.Point(287, 226);
+            this.dateIncio.Location = new System.Drawing.Point(334, 247);
             this.dateIncio.Name = "dateIncio";
             this.dateIncio.Size = new System.Drawing.Size(99, 20);
             this.dateIncio.TabIndex = 6;
@@ -103,17 +106,29 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(201, 233);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(208, 251);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 7;
             this.label1.Text = "Inicio";
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(318, 35);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(115, 16);
+            this.lblTitulo.TabIndex = 8;
+            this.lblTitulo.Text = "Alta Membresia";
             // 
             // AltaMembresia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateIncio);
             this.Controls.Add(this.lblPrecio);
@@ -141,5 +156,6 @@
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.DateTimePicker dateIncio;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }

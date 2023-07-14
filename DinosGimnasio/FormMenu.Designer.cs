@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.btnCapturar = new System.Windows.Forms.Button();
             this.lblContacto = new System.Windows.Forms.Label();
             this.txtContacto = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@
             this.lblDni = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pickImagen)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +81,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(626, 510);
             this.panel1.TabIndex = 0;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(228, 24);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(136, 20);
+            this.lblTitulo.TabIndex = 30;
+            this.lblTitulo.Text = "Alta De Usuario";
             // 
             // btnCapturar
             // 
@@ -185,7 +195,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(348, 475);
+            this.btnAceptar.Location = new System.Drawing.Point(341, 475);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(95, 22);
             this.btnAceptar.TabIndex = 8;
@@ -252,16 +262,6 @@
             this.lblNombre.Size = new System.Drawing.Size(56, 16);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre";
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(228, 24);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(136, 20);
-            this.lblTitulo.TabIndex = 30;
-            this.lblTitulo.Text = "Alta De Usuario";
             // 
             // Registro
             // 

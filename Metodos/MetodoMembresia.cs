@@ -43,11 +43,11 @@ namespace Metodos
         }
 
 
-        public void InsertarMembresia(Membresia membresia, TipoMembresia tipo)
+        public void InsertarMembresia(Membresia membresia)
         {
             try
             {
-                datos.setearConsulta("INSERT INTO Membresia (FechaDeInicio, FechaDeFin, IdTipoMembresia, IdUsuarios,Activo)< " +
+                datos.setearConsulta("INSERT INTO Membresia (FechaDeInicio, FechaDeFin, IdTipoMembresia, IdUsuarios,Activo) " +
                               "VALUES (@inicio, @fin, @membresia, @user,@activo)");
 
                 datos.setearParametro("@inicio", membresia.FechaDeIncio);
@@ -58,15 +58,15 @@ namespace Metodos
                 datos.ejecutarAccion();
                 datos.CerrarLectura();
 
-                // Insertar en la tabla TipoMembresia
-                datos.setearConsulta("INSERT INTO TipoMembresia (Nombre,Precio) " +
-                                      "VALUES (@nombre,@precio)");
+                //// Insertar en la tabla TipoMembresia
+                //datos.setearConsulta("INSERT INTO TipoMembresia (Nombre,Precio) " +
+                //                      "VALUES (@nombre,@precio)");
 
-                datos.setearParametro("@nombre", tipo.Nombre);
-                datos.setearParametro("@precio", tipo.Precio);
+                //datos.setearParametro("@nombre", tipo.Nombre);
+                //datos.setearParametro("@precio", tipo.Precio);
 
-                datos.ejecutarAccion();
-                datos.CerrarLectura();
+                //datos.ejecutarAccion();
+                //datos.CerrarLectura();
 
             }
             catch (Exception ex)
@@ -80,7 +80,7 @@ namespace Metodos
 
             }
         }
-        public void ActualizarMembresia(Membresia membresia)
+        public void ActualizarMembresia(Membresia membresia,TipoMembresia tipo)
         {
 
             try

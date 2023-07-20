@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vista_General));
             this.PanelHeader = new System.Windows.Forms.Panel();
             this.btnAcceso = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
@@ -168,6 +169,7 @@
             this.picImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImg.TabIndex = 2;
             this.picImg.TabStop = false;
+            this.picImg.Click += new System.EventHandler(this.picImg_Click);
             // 
             // btnComprar
             // 
@@ -198,6 +200,7 @@
             this.Controls.Add(this.dgvUsers);
             this.Controls.Add(this.PanelHeader);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Vista_General";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Vista_General_Load);

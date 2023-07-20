@@ -29,7 +29,11 @@ namespace Metodos
         //}
         public AccesoDatos()
         {
+
             conexion = new SqlConnection("server =.\\SQLEXPRESS; database=DinosGym; integrated security= true");
+
+           
+            //conexion = new SqlConnection("server =.\\SQLEXPRESS; database=DinosGym; integrated security= true");
             comando = new SqlCommand("");
 
 

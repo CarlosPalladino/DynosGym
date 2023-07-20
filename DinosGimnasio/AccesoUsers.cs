@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.IO;
 
 namespace DinosGimnasio
 {
@@ -43,12 +44,15 @@ namespace DinosGimnasio
                     lblApellido.Text = user.Apellido;
 
                     Nacimiento.Value = user.FechaDeNacimiento;
-                    CargarImagen(picImg.ImageLocation);
+                    CargarImagen(user.FotoDePerfil);
 
 
 
                     SoundPlayer soundPlayer = new SoundPlayer();
-                    soundPlayer.SoundLocation = "C:/Users/Carlos/Desktop/DinosGimnasioPresentacion/check.wav";
+                    //soundPlayer.SoundLocation = "C:/Users/Carlos/Desktop/DinosGimnasioPresentacion/check.wav";
+
+                    //pc
+                    soundPlayer.SoundLocation = "D:/Escritorio/DinosGimnasioPresentacion/check.wav";
                     soundPlayer.Play();
                     btnIngrsar.BackColor = Color.Green;
                 }
@@ -57,9 +61,10 @@ namespace DinosGimnasio
 
                     lblNombre.Text = null;
                     lblApellido.Text = null;
-                    CargarImagen(picImg.ImageLocation);
+                    CargarImagen(user.FotoDePerfil);
                     SoundPlayer soundPlayer = new SoundPlayer();
-                    soundPlayer.SoundLocation = "C:/Users/Carlos/Desktop/DinosGimnasioPresentacion/Err.wav";
+                 /*   soundPlayer.SoundLocation = "C:/Users/Carlos/Desktop/DinosGimnasioPresentacion/Err.wav";     */       //pc
+                    soundPlayer.SoundLocation = "D:/Escritorio/DinosGimnasioPresentacion/Err.wav";
                     soundPlayer.Play();
                     btnIngrsar.BackColor = Color.Red;
 
@@ -75,12 +80,18 @@ namespace DinosGimnasio
                 throw ex;
             }
         }
-
         private void CargarImagen(string imagen)
         {
             try
             {
-                picImg.Image = Image.FromFile(imagen);
+                //picImg.Image = Image.FromFile(imagen);
+
+                //string rutaCompleta = Path.Combine(@"C:\Users\Carlos\Desktop\DinosGimnasioPresentacion", imagen);   //pc
+                string rutaCompleta = Path.Combine(@"D:\Escritorio\DinosGimnasioPresentacion", imagen); // notebook
+
+                picImg.Image = Image.FromFile(rutaCompleta);
+                picImg.Load(rutaCompleta);
+
             }
             catch (Exception)
             {
@@ -93,6 +104,11 @@ namespace DinosGimnasio
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picImg_Click(object sender, EventArgs e)
         {
 
         }

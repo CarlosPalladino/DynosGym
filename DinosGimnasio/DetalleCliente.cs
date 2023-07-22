@@ -39,9 +39,7 @@ namespace DinosGimnasio
                 lbldocumento.Text = _user.Documento.ToString();
                 lblTipoMembresia.Text = _user.TiposMembresia.Nombre.ToString();
 
-                //DgvDetalleUser.DataSource = lista;
                 CargarImagen(picPerdfil.ImageLocation);
-                //OcultarColumnas();
 
 
 

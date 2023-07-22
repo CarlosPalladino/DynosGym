@@ -29,7 +29,7 @@ namespace DinosGimnasio
         private FilterInfoCollection misDispositivos;
         private VideoCaptureDevice WebCam;
         private OpenFileDialog archivo = null;
-
+        private bool fotoCargada = false;
         public Registro()
         {
             InitializeComponent();
@@ -39,7 +39,7 @@ namespace DinosGimnasio
             InitializeComponent();
             _user = usuarios;
             lblTitulo.Text = "Modificación de Usuario";
-        }
+        } 
 
         private void Registro_Load(object sender, EventArgs e)
         {
@@ -85,16 +85,16 @@ namespace DinosGimnasio
                   _user.Id = _user.Id;
                   _user.Nombre = txtNombre.Text;
                   _user.Apellido = txtApelido.Text;
-                    //_user.Pago =
                   _user.Contacto = long.Parse(txtContacto.Text);
                   _user.Altura = decimal.Parse(txtAltura.Text);
                   _user.Documento = long.Parse(txtDni.Text);
                   _user.Peso = int.Parse(txtPeso.Text);
                   _user.FechaDeNacimiento = dtpFecha.Value;
+
                   _user.FotoDePerfil = nombreImagenCapturada;
+
                     if (_user.Id != 0)
                     {
-
                         metodo.Modificar(_user);
                         MessageBox.Show("modificación exitosa");
                         Close();
@@ -167,6 +167,8 @@ namespace DinosGimnasio
 
         private void btnCapturar_Click(object sender, EventArgs e)
         {
+            cerrarWebCam();
+
             if (WebCam != null && WebCam.IsRunning)
             {
                 nombreImagenCapturada = DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpeg";
@@ -177,7 +179,6 @@ namespace DinosGimnasio
                 pickImagen.ImageLocation = rutaImagen;
 
                 pickImagen.Image.Save(rutaImagen, ImageFormat.Jpeg);
-                cerrarWebCam();
 
 
             }

@@ -31,7 +31,9 @@ namespace DinosGimnasio
         private FilterInfoCollection misDispositivos;
         private VideoCaptureDevice WebCam;
         private OpenFileDialog archivo = null;
-
+        private bool   fotocargada = false;
+        private bool imagenModificada = false;
+        
         public Registro()
         {
             InitializeComponent();
@@ -56,6 +58,8 @@ namespace DinosGimnasio
                 txtPeso.Text = _user.Peso.ToString();
                 dtpFecha.Value = _user.FechaDeNacimiento;
                 CargarImagen(_user.FotoDePerfil);
+                nombreImagenCapturada = _user.FotoDePerfil;
+                fotocargada = true;
 
             }
         }
@@ -90,6 +94,7 @@ namespace DinosGimnasio
                 _user.Altura = decimal.Parse(txtAltura.Text);
                 _user.Documento = long.Parse(txtDni.Text);
                 _user.Peso = int.Parse(txtPeso.Text);
+
                 _user.FechaDeNacimiento = dtpFecha.Value;
                 _user.FotoDePerfil = nombreImagenCapturada;
                 if (_user.Id != 0)
@@ -176,8 +181,10 @@ namespace DinosGimnasio
 
         private void btnCapturar_Click_1(object sender, EventArgs e)
         {
+            imagenModificada = true;
 
-            if (WebCam != null && WebCam.IsRunning)
+            
+            if (WebCam != null && WebCam.IsRunning )
             {
                 nombreImagenCapturada = DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpeg";
 

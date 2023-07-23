@@ -273,7 +273,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Registro";
-            this.Text = "6";
+            this.Text = resources.GetString("$this.Text");
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Registro_FormClosed);
             this.Load += new System.EventHandler(this.Registro_Load);
             this.panel1.ResumeLayout(false);

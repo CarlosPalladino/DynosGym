@@ -46,8 +46,14 @@ namespace DinosGimnasio
                 lista = metodo.lista();
                 dgvUsers.DataSource = lista;
                 listacompra = compra.lista();
-                CargarImagen(lista[0].FotoDePerfil);
-                OcultarColumnas();
+                if (lista.Count > 0)
+                {
+                    CargarImagen(lista[0].FotoDePerfil);
+                    OcultarColumnas();
+
+                }
+
+
             }
             catch (Exception ex)
             {
@@ -62,7 +68,8 @@ namespace DinosGimnasio
             {
                 //picImg.Image = Image.FromFile(imagen);
 
-                string rutaCompleta = Path.Combine(@"C:\Users\Carlos\Desktop\DinosGimnasioPresentacion", imagen);
+                //string rutaCompleta = Path.Combine(@"C:\Users\Carlos\Desktop\DinosGimnasioPresentacion", imagen);   //pc
+                string rutaCompleta = Path.Combine(@"D:\Escritorio\DinosGimnasioPresentacion", imagen); // notebook
 
                 picImg.Image = Image.FromFile(rutaCompleta);
                 picImg.Load(rutaCompleta);
@@ -130,6 +137,7 @@ namespace DinosGimnasio
 
                 CompraUsers compra = new CompraUsers(seleccionado);
                 compra.ShowDialog();
+                Cargar();
 
             }
         }
@@ -154,6 +162,7 @@ namespace DinosGimnasio
 
                 DetalleCliente detalle = new DetalleCliente(seleccionado.Id);
                 detalle.ShowDialog();
+                Cargar();
             }
         }
 
@@ -171,7 +180,7 @@ namespace DinosGimnasio
         private void btnReset_Click(object sender, EventArgs e)
         {
             txtFiltro.ResetText();
-           
+
         }
 
         private void btnAcceso_Click(object sender, EventArgs e)
@@ -199,6 +208,10 @@ namespace DinosGimnasio
             OcultarColumnas();
         }
 
+        private void picImg_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

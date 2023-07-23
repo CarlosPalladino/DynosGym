@@ -66,8 +66,11 @@ namespace Metodos
 
             try
             {
-                datos.setearConsulta("SELECT u.Id, u.Nombre, Apellido, Pago, Documento, FotoDePerfil, FechaDeNacimiento, Peso, Altura, Contacto,m.FechaDeInicio, m.FechaDeFin, t.Precio, t.Nombre AS NombreMembresia FROM Usuarios u JOIN Membresia m ON u.Id = m.IdUsuarios JOIN TipoMembresia t ON m.IdTipoMembresia = t.Id  where u.Id =@id");
+                //datos.setearConsulta("SELECT u.Id, u.Nombre, Apellido, Pago, Documento, FotoDePerfil, FechaDeNacimiento, Peso, Altura, Contacto,m.FechaDeInicio, m.FechaDeFin, t.Precio, t.Nombre AS NombreMembresia FROM Usuarios u JOIN Membresia m ON u.Id = m.IdUsuarios JOIN TipoMembresia t ON m.IdTipoMembresia = t.Id  where u.Id =@id");
+                datos.setearConsulta(" SELECT u.Id, u.Nombre, u.Apellido, u.Pago, u.Documento, u.FotoDePerfil, u.FechaDeNacimiento, u.Peso, u.Altura, u.Contacto  FROM Usuarios u where u.id=@id");
                 datos.setearParametro("@id", _id);
+
+
                 datos.EjecutarLectura();
 
                 while (datos.Lector.Read())
@@ -86,27 +89,29 @@ namespace Metodos
                     user.Peso = (int)datos.Lector["Peso"];
                     user.Altura = (decimal)datos.Lector["Altura"];
                     user.Contacto = (long)datos.Lector["Contacto"];
-                    user.Membresias = new Membresia();
-                    user.Membresias.FechaDeIncio = (DateTime)datos.Lector["FechaDeInicio"];
-                    user.Membresias.FechaDeFin = (DateTime)datos.Lector["FechaDeFin"];
 
-                    user.TiposMembresia = new TipoMembresia();
-                    user.TiposMembresia.Nombre = (string)datos.Lector["NombreMembresia"];
+                    //user.Membresias = new Membresia();
+                    //user.Membresias.FechaDeIncio = (DateTime)datos.Lector["FechaDeInicio"];
+                    //user.Membresias.FechaDeFin = (DateTime)datos.Lector["FechaDeFin"];
 
+                    //user.TiposMembresia = new TipoMembresia();
+                    //user.TiposMembresia.Nombre = (string)datos.Lector["NombreMembresia"];
 
                     detalle.Add(user);
+
+
                 }
+
+
                 return detalle;
+
             }
             catch (Exception ex)
             {
-
                 throw ex;
+
             }
         }
-
-
-
 
 
         public void Nuevo(Usuarios user)
@@ -114,11 +119,11 @@ namespace Metodos
 
             try
             {
-                datos.setearConsulta("insert into Usuarios( Nombre,Apellido,Pago,Documento,FotoDePerfil,FechaDeNacimiento,Peso,Altura,Contacto)Values(@nombre,@apellido,@doc,@pago,@foto,@fecha,@peso,@altura,@contacto)");
+                datos.setearConsulta("insert into Usuarios(Nombre,Apellido,Pago,Documento,FotoDePerfil,FechaDeNacimiento,Peso,Altura,Contacto)Values(@nombre,@apellido,@pago,@docu,@foto,@fecha,@peso,@altura,@contacto)");
                 datos.setearParametro("@nombre", user.Nombre);
                 datos.setearParametro("@apellido", user.Apellido);
-                datos.setearParametro("@pago", user.Pago);
-                datos.setearParametro("@doc", user.Documento);
+                datos.setearParametro("@pago", "");
+                datos.setearParametro("@docu", user.Documento);
                 datos.setearParametro("@foto", user.FotoDePerfil);
                 datos.setearParametro("@fecha", user.FechaDeNacimiento);
                 datos.setearParametro("@peso", user.Peso);
@@ -190,6 +195,7 @@ namespace Metodos
                 datos.setearConsulta("update Usuarios set Nombre=@nombre, Apellido=@apellido,FotoDePerfil=@foto ,FechaDeNacimiento=@nacimiento,Peso=@peso where Id=@id");
                 datos.setearParametro("@nombre", modi.Nombre);
                 datos.setearParametro("@apellido", modi.Apellido);
+
                 datos.setearParametro("@foto", modi.FotoDePerfil);
                 datos.setearParametro("@nacimiento", modi.FechaDeNacimiento);
                 datos.setearParametro("@peso", modi.Peso);

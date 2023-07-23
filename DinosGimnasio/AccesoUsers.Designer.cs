@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccesoUsers));
             this.picImg = new System.Windows.Forms.PictureBox();
             this.txtDocu = new System.Windows.Forms.TextBox();
             this.btnIngrsar = new System.Windows.Forms.Button();
@@ -47,12 +48,14 @@
             this.picImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImg.TabIndex = 0;
             this.picImg.TabStop = false;
+            this.picImg.Click += new System.EventHandler(this.picImg_Click);
             // 
             // txtDocu
             // 
-            this.txtDocu.Location = new System.Drawing.Point(178, 130);
+            this.txtDocu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDocu.Location = new System.Drawing.Point(176, 124);
             this.txtDocu.Name = "txtDocu";
-            this.txtDocu.Size = new System.Drawing.Size(178, 20);
+            this.txtDocu.Size = new System.Drawing.Size(178, 22);
             this.txtDocu.TabIndex = 1;
             // 
             // btnIngrsar
@@ -68,18 +71,20 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(175, 218);
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(127, 218);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(62, 16);
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = "Nombre";
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(312, 218);
+            this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellido.Location = new System.Drawing.Point(329, 218);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(44, 13);
+            this.lblApellido.Size = new System.Drawing.Size(65, 16);
             this.lblApellido.TabIndex = 5;
             this.lblApellido.Text = "Apellido";
             // 
@@ -96,9 +101,10 @@
             // lbtittle
             // 
             this.lbtittle.AutoSize = true;
-            this.lbtittle.Location = new System.Drawing.Point(238, 93);
+            this.lbtittle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtittle.Location = new System.Drawing.Point(213, 77);
             this.lbtittle.Name = "lbtittle";
-            this.lbtittle.Size = new System.Drawing.Size(62, 13);
+            this.lbtittle.Size = new System.Drawing.Size(85, 16);
             this.lbtittle.TabIndex = 8;
             this.lbtittle.Text = "Documento";
             this.lbtittle.Click += new System.EventHandler(this.label1_Click);
@@ -127,6 +133,7 @@
             this.Controls.Add(this.btnIngrsar);
             this.Controls.Add(this.txtDocu);
             this.Controls.Add(this.picImg);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AccesoUsers";
             this.Text = "AccesoUsers";
             this.Load += new System.EventHandler(this.AccesoUsers_Load);

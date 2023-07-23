@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,8 +29,24 @@ namespace DinosGimnasio
         private void DetalleCliente_Load(object sender, EventArgs e)
         {
             MetodoUser met = new MetodoUser();
+
+
+            //pensar en usuarios sin membresia
             lista = met.DetalleUser(_id);
             _user = lista[0];
+
+
+
+
+            lblNombre.Text = _user.Nombre;
+            lblApellido.Text = _user.Apellido;
+            lbldocumento.Text = _user.Documento.ToString();
+            //lblTipoMembresia.Text = _user.TiposMembresia.Nombre.ToString();
+
+            CargarImagen(picPerdfil.ImageLocation);
+
+
+
 
             try
             {
@@ -37,15 +54,16 @@ namespace DinosGimnasio
                 lblNombre.Text = _user.Nombre;
                 lblApellido.Text = _user.Apellido;
                 lbldocumento.Text = _user.Documento.ToString();
-                lblTipoMembresia.Text = _user.TiposMembresia.Nombre.ToString();
-
+                //lblContacto.Text = _user.TiposMembresia.Nombre.ToString();
+                lblContact.Text = _user.Contacto.ToString();
+                CargarImagen(_user.FotoDePerfil);
                 CargarImagen(picPerdfil.ImageLocation);
 
+                dateTimeFin.Value = (DateTime)_user.FechaDeNacimiento;
 
+                //dateTimeFin.Value = (DateTime)_user.Membresias.FechaDeIncio;
 
-                dateTimeFin.Value = (DateTime)_user.Membresias.FechaDeIncio;
-
-                DateTimeIncio.Value = (DateTime)_user.Membresias.FechaDeFin;
+                //DateTimeIncio.Value = (DateTime)_user.Membresias.FechaDeFin;
 
 
 
@@ -56,38 +74,15 @@ namespace DinosGimnasio
 
                 throw ex;
             }
+
         }
 
 
-        //public void OcultarColumnas()
-        //{
-        //    DgvDetalleUser.Columns["FotoDePerfil"].Visible = false;
-        //    DgvDetalleUser.Columns["Pago"].Visible = false;
-        //    //DgvDetalleUser.Columns["Membresias"].Visible = false;
-        //    //dgvUsers.Columns["Id"].Visible = false;
-        //    //dgvUsers.Columns["TiposMembresia"].Visible = false;
 
 
-        //}
 
 
-        private void CargarImagen(string imagen)
-        {
-            try
-            {
 
-                picPerdfil.Image = Image.FromFile(imagen);
-
-            }
-            catch (Exception)
-            {
-
-                {
-                    picPerdfil.Load("https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-portrait-176256935.jpg");
-
-                }
-            }
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -108,7 +103,7 @@ namespace DinosGimnasio
                 if (respuesta == DialogResult.Yes)
                 {
                     metodo.Eliminar(_user.Id);
-
+                    Close();
                 }
 
             }
@@ -128,5 +123,36 @@ namespace DinosGimnasio
         {
 
         }
+
+        private void picPerdfil_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CargarImagen(string imagen)
+        {
+            try
+            {
+                //picImg.Image = Image.FromFile(imagen);
+
+                //string rutaCompleta = Path.Combine(@"C:\Users\Carlos\Desktop\DinosGimnasioPresentacion", imagen);   //pc
+                string rutaCompleta = Path.Combine(@"D:\Escritorio\DinosGimnasioPresentacion", imagen); // notebook
+
+                picPerdfil.Image = Image.FromFile(rutaCompleta);
+                picPerdfil.Load(rutaCompleta);
+
+            }
+            catch (Exception)
+            {
+
+                {
+
+                    picPerdfil.Load("https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-portrait-176256935.jpg");
+
+                }
+            }
+        }
+
+
     }
 }

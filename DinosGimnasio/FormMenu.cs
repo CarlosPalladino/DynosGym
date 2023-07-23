@@ -24,12 +24,18 @@ namespace DinosGimnasio
 
         private string nombreImagenCapturada = "";
 
-        public string path = @"D:\Escritorio\DinosGimnasioPresentacion\"; // cambiar dependiendo de la carpeta  ?
+        /*        public string path = @"D:\Escritorio\DinosGimnasioPresentacion\";      *///pc
+
+        public string path = @"D:\Escritorio\DinosGimnasioPresentacion\";                                                 //notebook
         private bool HayDispositivo;
         private FilterInfoCollection misDispositivos;
         private VideoCaptureDevice WebCam;
         private OpenFileDialog archivo = null;
         private bool fotoCargada = false;
+
+        private bool fotocargada = false;
+        private bool imagenModificada = false;
+
         public Registro()
         {
             InitializeComponent();
@@ -39,7 +45,7 @@ namespace DinosGimnasio
             InitializeComponent();
             _user = usuarios;
             lblTitulo.Text = "Modificación de Usuario";
-        } 
+        }
 
         private void Registro_Load(object sender, EventArgs e)
         {
@@ -53,8 +59,9 @@ namespace DinosGimnasio
                 txtDni.Text = _user.Documento.ToString();
                 txtPeso.Text = _user.Peso.ToString();
                 dtpFecha.Value = _user.FechaDeNacimiento;
-                cargarImagen(_user.FotoDePerfil);
-
+                CargarImagen(_user.FotoDePerfil);
+                nombreImagenCapturada = _user.FotoDePerfil;
+                fotocargada = true;
 
             }
         }
@@ -79,22 +86,39 @@ namespace DinosGimnasio
             try
             {
                 if (_user == null)
-                {
+
                     _user = new Usuarios();
-                  
-                  _user.Id = _user.Id;
-                  _user.Nombre = txtNombre.Text;
-                  _user.Apellido = txtApelido.Text;
-                  _user.Contacto = long.Parse(txtContacto.Text);
-                  _user.Altura = decimal.Parse(txtAltura.Text);
-                  _user.Documento = long.Parse(txtDni.Text);
-                  _user.Peso = int.Parse(txtPeso.Text);
-                  _user.FechaDeNacimiento = dtpFecha.Value;
 
-                  _user.FotoDePerfil = nombreImagenCapturada;
+                _user.Id = _user.Id;
+                _user.Nombre = txtNombre.Text;
+                _user.Apellido = txtApelido.Text;
+                _user.Contacto = long.Parse(txtContacto.Text);
+                _user.Altura = decimal.Parse(txtAltura.Text);
+                _user.Documento = long.Parse(txtDni.Text);
+                _user.Peso = int.Parse(txtPeso.Text);
+                _user.FechaDeNacimiento = dtpFecha.Value;
 
+                _user.FotoDePerfil = nombreImagenCapturada;
+
+                if (_user.Id != 0)
+                {
+                    metodo.Modificar(_user);
+                    MessageBox.Show("modificación exitosa");
+                    Close();
+
+                    _user.Id = _user.Id;
+                    _user.Nombre = txtNombre.Text;
+                    _user.Apellido = txtApelido.Text;
+                    _user.Contacto = long.Parse(txtContacto.Text);
+                    _user.Altura = decimal.Parse(txtAltura.Text);
+                    _user.Documento = long.Parse(txtDni.Text);
+                    _user.Peso = int.Parse(txtPeso.Text);
+
+                    _user.FechaDeNacimiento = dtpFecha.Value;
+                    _user.FotoDePerfil = nombreImagenCapturada;
                     if (_user.Id != 0)
                     {
+
                         metodo.Modificar(_user);
                         MessageBox.Show("modificación exitosa");
                         Close();
@@ -102,14 +126,15 @@ namespace DinosGimnasio
                     }
                     else
                     {
-                        metodo.Nuevo(   _user);
+                        metodo.Nuevo(_user);
                         MessageBox.Show("agregado exitoso");
                         Close();
 
 
                     }
-                }
 
+
+                }
             }
             catch (Exception ex)
             {
@@ -118,21 +143,25 @@ namespace DinosGimnasio
             }
         }
 
-
-        private void cargarImagen(string imagen)
+        private void CargarImagen(string imagen)
         {
             try
             {
-                pickImagen.Load(imagen);
+                //picImg.Image = Image.FromFile(imagen);
 
+                //string rutaCompleta = Path.Combine(@"C:\Users\Carlos\Desktop\DinosGimnasioPresentacion", imagen);   //pc
+                string rutaCompleta = Path.Combine(@"D:\\Escritorio\\DinosGimnasioPresentacion", imagen); // notebook
+
+                pickImagen.Image = Image.FromFile(rutaCompleta);
+                pickImagen.Load(rutaCompleta);
 
             }
-
             catch (Exception)
             {
 
                 {
                     pickImagen.Load("https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-portrait-176256935.jpg");
+
                 }
             }
         }
@@ -143,13 +172,6 @@ namespace DinosGimnasio
                 WebCam.SignalToStop();
                 WebCam = null;
             }
-        }
-        private void BtnTomarFoto_Click(object sender, EventArgs e)
-        {
-            cerrarWebCam();
-            WebCam = new VideoCaptureDevice(misDispositivos[0].MonikerString);
-            WebCam.NewFrame += new NewFrameEventHandler(Capturando);
-            WebCam.Start();
         }
 
         private void Capturando(object sender, NewFrameEventArgs eventArgs)
@@ -165,11 +187,27 @@ namespace DinosGimnasio
             cerrarWebCam();
         }
 
-        private void btnCapturar_Click(object sender, EventArgs e)
+
+        private void BtnTomarFoto_Click_1(object sender, EventArgs e)
         {
             cerrarWebCam();
 
             if (WebCam != null && WebCam.IsRunning)
+
+
+            cerrarWebCam();
+            WebCam = new VideoCaptureDevice(misDispositivos[0].MonikerString);
+            WebCam.NewFrame += new NewFrameEventHandler(Capturando);
+            WebCam.Start();
+
+        }
+
+        private void btnCapturar_Click_1(object sender, EventArgs e)
+        {
+            imagenModificada = true;
+
+            
+            if (WebCam != null && WebCam.IsRunning )
             {
                 nombreImagenCapturada = DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpeg";
 
@@ -183,7 +221,5 @@ namespace DinosGimnasio
 
             }
         }
-
-
     }
 }

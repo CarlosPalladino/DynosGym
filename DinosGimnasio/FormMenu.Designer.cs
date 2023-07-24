@@ -86,7 +86,7 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(228, 24);
+            this.lblTitulo.Location = new System.Drawing.Point(240, 23);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(136, 20);
             this.lblTitulo.TabIndex = 30;
@@ -94,13 +94,12 @@
             // 
             // btnCapturar
             // 
-            this.btnCapturar.Location = new System.Drawing.Point(415, 379);
+            this.btnCapturar.Location = new System.Drawing.Point(419, 379);
             this.btnCapturar.Name = "btnCapturar";
-            this.btnCapturar.Size = new System.Drawing.Size(75, 23);
+            this.btnCapturar.Size = new System.Drawing.Size(71, 23);
             this.btnCapturar.TabIndex = 29;
             this.btnCapturar.Text = "Caputar";
             this.btnCapturar.UseVisualStyleBackColor = true;
-            //this.btnCapturar.Click += new System.EventHandler(this.btnCapturar_Click_1);
             // 
             // lblContacto
             // 
@@ -115,14 +114,14 @@
             // 
             // txtContacto
             // 
-            this.txtContacto.Location = new System.Drawing.Point(403, 151);
+            this.txtContacto.Location = new System.Drawing.Point(403, 157);
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(114, 20);
             this.txtContacto.TabIndex = 5;
             // 
             // BtnTomarFoto
             // 
-            this.BtnTomarFoto.Location = new System.Drawing.Point(415, 322);
+            this.BtnTomarFoto.Location = new System.Drawing.Point(419, 322);
             this.BtnTomarFoto.Name = "BtnTomarFoto";
             this.BtnTomarFoto.Size = new System.Drawing.Size(71, 21);
             this.BtnTomarFoto.TabIndex = 7;
@@ -135,7 +134,7 @@
             this.lblAltura.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.lblAltura.AutoSize = true;
             this.lblAltura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAltura.Location = new System.Drawing.Point(43, 114);
+            this.lblAltura.Location = new System.Drawing.Point(26, 111);
             this.lblAltura.Name = "lblAltura";
             this.lblAltura.Size = new System.Drawing.Size(41, 16);
             this.lblAltura.TabIndex = 24;
@@ -156,7 +155,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(43, 199);
+            this.lblFecha.Location = new System.Drawing.Point(207, 215);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(75, 16);
             this.lblFecha.TabIndex = 22;
@@ -164,21 +163,21 @@
             // 
             // txtAltura
             // 
-            this.txtAltura.Location = new System.Drawing.Point(127, 107);
+            this.txtAltura.Location = new System.Drawing.Point(127, 110);
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Size = new System.Drawing.Size(114, 20);
             this.txtAltura.TabIndex = 2;
             // 
             // txtPeso
             // 
-            this.txtPeso.Location = new System.Drawing.Point(403, 107);
+            this.txtPeso.Location = new System.Drawing.Point(403, 110);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(114, 20);
             this.txtPeso.TabIndex = 3;
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(127, 195);
+            this.dtpFecha.Location = new System.Drawing.Point(291, 211);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(114, 20);
             this.dtpFecha.TabIndex = 6;
@@ -214,7 +213,7 @@
             // 
             // txtDni
             // 
-            this.txtDni.Location = new System.Drawing.Point(127, 151);
+            this.txtDni.Location = new System.Drawing.Point(127, 154);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(114, 20);
             this.txtDni.TabIndex = 4;
@@ -237,7 +236,7 @@
             // 
             this.lblDni.AutoSize = true;
             this.lblDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDni.Location = new System.Drawing.Point(43, 158);
+            this.lblDni.Location = new System.Drawing.Point(26, 155);
             this.lblDni.Name = "lblDni";
             this.lblDni.Size = new System.Drawing.Size(39, 16);
             this.lblDni.TabIndex = 3;
@@ -257,7 +256,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(43, 67);
+            this.lblNombre.Location = new System.Drawing.Point(26, 71);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(56, 16);
             this.lblNombre.TabIndex = 1;

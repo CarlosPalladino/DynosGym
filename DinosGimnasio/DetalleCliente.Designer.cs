@@ -32,7 +32,6 @@
             this.picPerdfil = new System.Windows.Forms.PictureBox();
             this.btnAtrás = new System.Windows.Forms.Button();
             this.dateTimeFin = new System.Windows.Forms.DateTimePicker();
-            this.DateTimeIncio = new System.Windows.Forms.DateTimePicker();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
@@ -72,15 +71,6 @@
             this.dateTimeFin.Name = "dateTimeFin";
             this.dateTimeFin.Size = new System.Drawing.Size(200, 20);
             this.dateTimeFin.TabIndex = 17;
-            // 
-            // DateTimeIncio
-            // 
-            this.DateTimeIncio.Location = new System.Drawing.Point(351, 348);
-            this.DateTimeIncio.MinDate = new System.DateTime(1964, 6, 10, 0, 0, 0, 0);
-            this.DateTimeIncio.Name = "DateTimeIncio";
-            this.DateTimeIncio.Size = new System.Drawing.Size(200, 20);
-            this.DateTimeIncio.TabIndex = 18;
-            this.DateTimeIncio.Visible = false;
             // 
             // btnEliminar
             // 
@@ -166,7 +156,7 @@
             // 
             this.lblContacto.AutoSize = true;
             this.lblContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContacto.Location = new System.Drawing.Point(261, 175);
+            this.lblContacto.Location = new System.Drawing.Point(261, 174);
             this.lblContacto.Name = "lblContacto";
             this.lblContacto.Size = new System.Drawing.Size(59, 16);
             this.lblContacto.TabIndex = 29;
@@ -198,7 +188,6 @@
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.DateTimeIncio);
             this.Controls.Add(this.dateTimeFin);
             this.Controls.Add(this.btnAtrás);
             this.Controls.Add(this.picPerdfil);
@@ -218,7 +207,6 @@
         private System.Windows.Forms.PictureBox picPerdfil;
         private System.Windows.Forms.Button btnAtrás;
         private System.Windows.Forms.DateTimePicker dateTimeFin;
-        private System.Windows.Forms.DateTimePicker DateTimeIncio;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblApellido;

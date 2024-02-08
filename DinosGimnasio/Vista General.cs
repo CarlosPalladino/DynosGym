@@ -212,6 +212,11 @@ namespace DinosGimnasio
         {
 
         }
+
+        private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 
